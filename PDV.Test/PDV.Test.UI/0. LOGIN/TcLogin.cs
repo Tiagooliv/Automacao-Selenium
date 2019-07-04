@@ -12,14 +12,14 @@ namespace PDV.Test.UI.TestPlan.Login
     public class TcLogin_POS
     {
         
-        private UrlPos Url;
-        private PoLogin_POS L;
+        private UrlPDV Url;
+        private PoLogin_PDV L;
 
         public TcLogin_POS()
         {
             IWebDriver driver = new ChromeDriver();
-            Url = new UrlPos(driver);
-            L = new PoLogin_POS(driver);
+            Url = new UrlPDV(driver);
+            L = new PoLogin_PDV(driver);
         }
 
 
@@ -27,8 +27,17 @@ namespace PDV.Test.UI.TestPlan.Login
         public void AcessarPos()
         {
             Url.PosTST();
-            L.Login();
+            L.POS();
         }
+
+        [TestMethod]
+
+        public void AcessarAdmin()
+        {
+            Url.AdminTST();
+            L.Admin();
+        }
+
 
         
 

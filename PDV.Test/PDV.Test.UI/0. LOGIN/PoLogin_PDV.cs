@@ -9,27 +9,29 @@ using PDV.Test.UI.POS.CommonMethods;
 namespace PDV.Test.UI.PageObjects.PDV
 {
 
-    public class PoLogin_POS
+    public class PoLogin_PDV
 
     {
         private IWebDriver _driver;
         private WaitElement Wait;
 
-        public PoLogin_POS(IWebDriver driver)
+        public PoLogin_PDV(IWebDriver driver)
         {
             this._driver = driver;
             Wait = new WaitElement(driver);
         }
 
-        public void Login()
+        public void Admin()
         {
-            Wait.LocateElementAndClick(By.XPath("//thf-container/div/div/form/div/thf-button/button"));       
-                      
+            Wait.LocateElementAndClick(By.XPath("//thf-container/div/div/form/div/thf-button/button"));
+            
         }
 
-        public void Test ()
+        public void POS()
         {
+            Wait.LocateElementAndClick(By.XPath("//thf-container/div/div/form/div/thf-button/button"));
 
+            Thread.Sleep(10000);
         }
 
 
