@@ -66,7 +66,7 @@
     <Compile Include="0. LOGIN\PoLogin_PDV.cs" />
     <Compile Include="ADMIN\PageObjects\Po_GruposDeProdutos.cs" />
     <Compile Include="ADMIN\PageObjects\Po_Menus.cs" />
-    <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.03_GruposDeProdutos\CN 02.03.01_AdicionarGrupo\Tc_AdicionarGrupoDeProdutos.cs" />
+    <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.03_GruposDeProdutos\Tc_GruposDeProdutos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="0. LOGIN\TcLogin.cs" />
   </ItemGroup>

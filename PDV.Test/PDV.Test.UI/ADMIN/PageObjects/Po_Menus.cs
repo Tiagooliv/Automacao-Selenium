@@ -32,7 +32,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
         {
             Item();
             Menu(By.XPath("//div/div[2]/div[3]/thf-menu-item/a")); //Grupo de Produtos
-            driver.Navigate().Refresh();
+            //driver.Navigate().Refresh();
         }
 
         
