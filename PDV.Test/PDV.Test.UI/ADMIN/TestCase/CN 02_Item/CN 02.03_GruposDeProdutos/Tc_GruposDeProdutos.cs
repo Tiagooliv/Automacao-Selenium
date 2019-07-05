@@ -39,7 +39,7 @@ namespace TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos.CN_02._03._01_Adicionar
             Gr.DadosdoGrupo("A Bebidas não Alcoólicas - Automatizado", "Bebidas");
             Gr.IconeGrupo();
             Gr.BtnSalvar();
-            Gr.ValidaCadastro("A Bebidas não Alcoólicas - Automatizado");
+            Gr.ValidarCadastro("A Bebidas não Alcoólicas - Automatizado");
         }
     }
 }

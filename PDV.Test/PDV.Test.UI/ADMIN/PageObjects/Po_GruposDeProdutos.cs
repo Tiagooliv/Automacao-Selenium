@@ -3,7 +3,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using PDV.Test.UI.POS.CommonMethods;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace PDV.Test.UI.ADMIN.PageObjects
 {
@@ -43,16 +42,16 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         {
             driver.FindElement(By.XPath("//div[3]/thf-button[2]/button")).Click();
 
-            Wait.LocateElement(By.XPath("/html/body/thf-toaster/div/div"));
-            var Msg = driver.FindElement(By.XPath("/html/body/thf-toaster/div/div")).Text;
+            Wait.LocateElement(By.XPath("/html/body/thf-toaster/div/div")); //Aguarda mensagem na tela
 
-            Assert.AreEqual("Grupo criado com sucesso", Msg); // Valida a mensagem: "Grupo criado com sucesso".                          
+            var Msg = driver.FindElement(By.XPath("/html/body/thf-toaster/div/div")).Text;
+            Assert.AreEqual("Grupo criado com sucesso", Msg); // Valida a mensagem                          
 
         }
 
-        public void ValidaCadastro(string NomeGrupo)
+        public void ValidarCadastro(string NomeGrupo)
         {
-            driver.FindElement(By.XPath("//table/thead/tr/th[2]/div/span[2]")).Click();
+            //driver.FindElement(By.XPath("//table/thead/tr/th[2]/div/span[2]")).Click(); Ordena Lista
 
             var nomegrupo = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;
 
@@ -61,7 +60,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
                 Assert.Fail("Falha no cadastro grupo  "+ NomeGrupo +"   não encontrado.");
             }
 
-
+                       
         }
 
            
