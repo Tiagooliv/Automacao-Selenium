@@ -1,11 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
+
 
 namespace PDV.Test.UI.POS.CommonMethods
 {
@@ -22,7 +19,7 @@ namespace PDV.Test.UI.POS.CommonMethods
         public void LocateElement(By locator)
         {
             Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(locator));
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
         }
 
         public void LocateElementAndClick(By locator)
