@@ -18,16 +18,13 @@ namespace PDV.Test.UI.POS.CommonMethods
 
         public void LocateElement(By locator)
         {
-            Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(locator));
-            Thread.Sleep(500);
+            Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(locator));            
         }
 
         public void LocateElementAndClick(By locator)
         {
             var Element = Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(locator));
-            Element.Click();
-            Thread.Sleep(500);
-
+            Element.Click();           
         }
     }
 }

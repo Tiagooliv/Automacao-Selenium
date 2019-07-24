@@ -19,17 +19,17 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
         public void BtnAdicionarGrupo()
         {
-            Wait.LocateElementAndClick(By.XPath("//div/div[1]/div/thf-button/button"));
+             Wait.LocateElementAndClick(By.ClassName("thf-button-sm"));
         }
 
         public void DadosdoGrupo(string NomeGrupo, string GrupoFixo)
         {
-            Wait.LocateElement(By.XPath("//thf-modal/div/div/div/div/div/div[1]/div")); //Titulo Modal 
+            Wait.LocateElement(By.ClassName("thf-modal-title")); //Titulo Modal 
 
-            var nomegrupo = driver.FindElement(By.XPath("//div[2]/form/div[1]/div[1]/thf-input/thf-field-container/div/div[2]/input"));
+            var nomegrupo = driver.FindElement(By.XPath("//div[2]//div[1]/div[1]/thf-input/thf-field-container/div/div[2]/input"));
             nomegrupo.SendKeys(NomeGrupo);
 
-            SelectElement grupofixo = new SelectElement(driver.FindElement(By.XPath("//div[2]/thf-select/thf-field-container/div/select")));
+            SelectElement grupofixo = new SelectElement(driver.FindElement(By.ClassName("thf-select")));
             grupofixo.SelectByText(GrupoFixo);
         }
 
@@ -50,7 +50,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
         public void ValidarCadastro(string NomeGrupo)
         {
-            var Pesquisagrupo = driver.FindElement(By.XPath("//thf-input/thf-field-container/div/div[2]/input"));
+            var Pesquisagrupo = driver.FindElement(By.ClassName("thf-input-icon-left"));                   
             Pesquisagrupo.SendKeys(NomeGrupo);
 
             var nomegrupo = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;
