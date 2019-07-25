@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using PDV.Test.UI.POS.CommonMethods;
 
 
@@ -33,6 +30,12 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
             Item();
             Menu(By.XPath("//div/div[2]/div[3]/thf-menu-item/a")); //Grupo de Produtos
             //driver.Navigate().Refresh();
+        }
+
+        public void Modificadores ()
+        {
+            Item();
+            Menu(By.XPath("//div[2]/div[2]/thf-menu-item/a/div/div"));
         }
 
         
