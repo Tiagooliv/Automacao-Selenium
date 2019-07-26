@@ -60,7 +60,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
                 Assert.Fail("Falha no cadastro grupo  " + NomeGrupo + "   não encontrado.");
             }
 
-            Thread.Sleep(3000);
+            
             
         }
 

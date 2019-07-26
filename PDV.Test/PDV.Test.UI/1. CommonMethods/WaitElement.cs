@@ -26,5 +26,11 @@ namespace PDV.Test.UI.POS.CommonMethods
             var Element = Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(locator));
             Element.Click();           
         }
+
+        public void LocateElementExists(By locator)
+        {
+            var Element = Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(locator));
+            Element.Click();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using PDV.Test.UI.POS.CommonMethods;
 
 
@@ -35,7 +36,11 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
         public void Modificadores ()
         {
             Item();
-            Menu(By.XPath("//div[2]/div[2]/thf-menu-item/a/div/div"));
+            Menu(By.XPath("//div[2]/div[2]/thf-menu-item/a/div/div"));//Modificadores
+
+            Wait.LocateElement(By.XPath("//div[1]/button/span[2]"));
+            var titulo = driver.FindElement(By.XPath("//div[1]/button/span[2]")).Text;
+            Assert.AreEqual("MODIFICADORES", titulo);
         }
 
         
