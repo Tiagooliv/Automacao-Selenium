@@ -1,8 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using PDV.Test.UI._1._CommonMethods;
 using PDV.Test.UI.POS.CommonMethods;
-
+using System.Threading;
 
 namespace PDV.Test.UI.ADMIN.PageObjects
 {
@@ -10,10 +11,13 @@ namespace PDV.Test.UI.ADMIN.PageObjects
     {
         private IWebDriver driver;
         private WaitElement Wait;
+        private Keyboard Key;
+
         public Po_Modificadores(IWebDriver driver)
         {
             this.driver = driver;
             Wait = new WaitElement(driver);
+            Key = new Keyboard(driver); 
         }
 
         public void BtnAdicionarModificador()
@@ -40,13 +44,14 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
         public void Modificador(string ItemTipo, string descricao,string Preco)
         {
-            var itemtipo = driver.FindElement(By.XPath("//div[2]/thf-combo/thf-field-container/div/div[2]/input"));
-            var desc = driver.FindElement(By.XPath("//div[3]/thf-input/thf-field-container/div/div[2]/input"));
-            var preco = driver.FindElement(By.XPath("//div[5]/thf-decimal/thf-field-container/div/div[2]/input"));
+          driver.FindElement(By.XPath("//div[2]/thf-combo/thf-field-container/div/div[2]/input")).SendKeys(ItemTipo);
+          Key.Tab(By.XPath("//div[2]/thf-combo/thf-field-container/div/div[2]/input"));
+
+          driver.FindElement(By.XPath("//div[3]/thf-input/thf-field-container/div/div[2]/input")).SendKeys(descricao);
+          Key.Tab(By.XPath("//div[3]/thf-input/thf-field-container/div/div[2]/input"));
+
+          driver.FindElement(By.XPath("//div[5]/thf-decimal/thf-field-container/div/div[2]/input")).SendKeys(Preco);        
             
-            itemtipo.SendKeys(ItemTipo);
-            desc.SendKeys(descricao);
-            preco.SendKeys(Preco);
         }
 
         public void BtnSalvar ()

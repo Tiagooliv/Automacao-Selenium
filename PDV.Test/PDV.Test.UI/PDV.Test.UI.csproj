@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="1. CommonMethods\Keyboard.cs" />
     <Compile Include="1. CommonMethods\UrlPDV.cs" />
     <Compile Include="1. CommonMethods\TestLocalTools.cs" />
     <Compile Include="1. CommonMethods\WaitElement.cs" />
