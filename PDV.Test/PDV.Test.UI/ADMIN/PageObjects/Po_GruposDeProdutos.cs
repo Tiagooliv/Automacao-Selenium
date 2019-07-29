@@ -41,10 +41,10 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public void BtnSalvar()
         {
             driver.FindElement(By.XPath("//div[3]/thf-button[2]/button")).Click();//Salvar
-            Wait.LocateElement(By.XPath("/html/body/thf-toaster/div/div")); //Aguarda mensagem na tela
+            Wait.LocateElement(By.XPath("/html/body/thf-toaster/div/div")); //Aguarda mensagem na tela "Cadastro com sucesso"
 
             var Msg = driver.FindElement(By.XPath("/html/body/thf-toaster/div/div")).Text;
-            Assert.AreEqual("Grupo criado com sucesso", Msg); // Valida a mensagem                         
+            Assert.AreEqual("Grupo criado com sucess", Msg); // Valida a mensagem                         
 
         }
 
@@ -57,7 +57,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
             if (nomegrupo != NomeGrupo)
             {
-                Assert.Fail("Falha no cadastro grupo  " + NomeGrupo + "   não encontrado.");
+                Assert.Fail("Falha no cadastro, grupo  " + NomeGrupo + "   não encontrado.");
             }
 
             
