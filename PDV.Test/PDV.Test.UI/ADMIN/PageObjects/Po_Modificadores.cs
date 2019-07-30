@@ -1,8 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using PDV.Test.UI._1._CommonMethods;
 using PDV.Test.UI.POS.CommonMethods;
 using System.Threading;
+using System.Windows;
 
 namespace PDV.Test.UI.ADMIN.PageObjects
 {
@@ -10,17 +12,19 @@ namespace PDV.Test.UI.ADMIN.PageObjects
     {
         private IWebDriver driver;
         private WaitElement Wait;
-        
+        private ValidateSwitch Sw;
+
         public Po_Modificadores(IWebDriver driver)
         {
             this.driver = driver;
             Wait = new WaitElement(driver);
+            Sw = new ValidateSwitch(driver);
         }
 
         public void BtnAdicionarModificador()
         {
-          Thread.Sleep(1000);
-          driver.FindElement(By.XPath("//div[1]/div/thf-button/button")).Click();
+            Thread.Sleep(1000);
+            Wait.LocateElementAndClick(By.XPath("//div[1]/div/thf-button/button"));
         }
 
         public void DadosDoModificador(string NomeMod, string QtdMin, string QtdMax, string UnMed)
@@ -35,7 +39,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
             Wait.LocateElement(By.ClassName("thf-select"));
             SelectElement unmed = new SelectElement(driver.FindElement(By.ClassName("thf-select")));
-            unmed.SelectByText(UnMed);             
+            unmed.SelectByText(UnMed);
         }
 
         public void Modificador(string ItemTipo, string Descricao, string Preco)
@@ -62,19 +66,33 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
         public void ValidarCadastro(string NomeMod)
         {
-            driver.FindElement(By.ClassName("thf-input-icon-left")).SendKeys(NomeMod);//Pesquisa modificador cadastrado
-            
-            var nomemod = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;//Guarda o primeiro resultado
-            if (nomemod != NomeMod) //Compara cadastro x resultado pesquisa
+            //Pesquisa modificador cadastrado
+            driver.FindElement(By.ClassName("thf-input-icon-left")).SendKeys(NomeMod);
+
+            //Guarda o primeiro resultado da lista
+            var nomemod = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;
+
+            //Compara cadastro x resultado pesquisa
+            if (nomemod != NomeMod) 
             {
                 Assert.Fail("Falha no cadastro, grupo  " + NomeMod + "   não encontrado.");
             }
 
-            var CadAtivo = driver.FindElement(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div")).GetAttribute("Class");
-            if (CadAtivo.Equals("thf-switch-container thf-clickable thf-switch-container-off"))
-            {
-                Assert.Fail("Modificador Inativo");
-            }
+            //Verifica se o componente switch está ativo
+
+            Sw.SwitchAtivo(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div"), "Class",
+           "thf-switch-container thf-clickable thf-switch-container-off", "O NOVO MODIFICADOR está INATIVO");
+
+            #region Antiga validação 
+            //var Switch = driver.FindElement(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div")).GetAttribute("Class");
+
+            //if (Switch.Equals("thf-switch-container thf-clickable thf-switch-container-off"))
+            //{
+            //    Assert.Fail("Modificador Inativo");
+            //}
+            #endregion
+
+            driver.Close();
         }
 
     }

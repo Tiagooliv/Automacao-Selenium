@@ -39,7 +39,6 @@ C:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\nunit.framework.pdb
 C:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\nunit.framework.xml
 C:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\WebDriver.xml
 C:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\WebDriver.Support.xml
-C:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.csprojAssemblyReference.cache
 C:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.csproj.CoreCompileInputs.cache
 C:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.csproj.CopyComplete
 C:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.dll
