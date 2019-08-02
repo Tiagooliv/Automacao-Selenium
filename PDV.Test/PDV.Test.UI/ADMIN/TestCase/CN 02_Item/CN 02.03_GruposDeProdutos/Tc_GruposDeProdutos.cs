@@ -15,7 +15,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
     public class Tc_GruposDeProdutos
 
     {
-        private UrlPDV Url;
+        private HomePagePOSTHEx HP;
         private PoLogin_PDV Login;
         private Po_Menus Menu;
         private Po_GruposDeProdutos Gr;
@@ -23,7 +23,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
         public Tc_GruposDeProdutos()
         {
             IWebDriver driver = new ChromeDriver();
-            Url = new UrlPDV(driver);
+            HP = new HomePagePOSTHEx(driver);
             Login = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
             Gr = new Po_GruposDeProdutos(driver);
@@ -33,7 +33,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
         public void AdicionarGrupo()
 
         {
-            Url.AdminTST();
+            HP.AdminTST();
             Login.Admin();
             Menu.GruposDeProdutos();
             Gr.BtnAdicionarGrupo();

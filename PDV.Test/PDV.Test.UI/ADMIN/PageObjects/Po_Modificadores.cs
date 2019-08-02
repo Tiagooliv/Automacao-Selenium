@@ -92,7 +92,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             //}
             #endregion
 
-            driver.Close();
+            //driver.Close();
         }
 
     }

@@ -5,31 +5,30 @@ using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
 using PDV.Test.UI.PageObjects.PDV;
+using NUnit.Framework;
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02___Modificadores
 {
     [TestClass]
     public class Tc_Modificadores
     {
-        private UrlPDV Url;
+        private HomePagePOSTHEx HP;
         private PoLogin_PDV Login;
         private Po_Menus Menu;
         private Po_Modificadores Mod;
         public Tc_Modificadores()
         {
             IWebDriver driver = new ChromeDriver();
-            Url = new UrlPDV(driver);
+            HP = new HomePagePOSTHEx(driver);
             Login = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
             Mod = new Po_Modificadores(driver);
-
-        }
+        }                    
 
         [TestMethod]
-
         public void AdicionarModificador()
         {
-            Url.AdminTST();
+            HP.AdminTST();
             Login.Admin();
             Menu.Modificadores();
             Mod.BtnAdicionarModificador();
@@ -37,7 +36,14 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02___Modificadores
             Mod.Modificador("Branco", "Molho Branco", "5");
             Mod.BtnSalvar();
             Mod.ValidarCadastro("Molho - Aut");
-
         }
+
+        [TestMethod]
+        public void EditarModificador()
+        {
+            
+        }
+
+
     }
 }
