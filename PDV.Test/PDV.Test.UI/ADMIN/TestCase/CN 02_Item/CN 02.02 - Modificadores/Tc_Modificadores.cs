@@ -12,15 +12,15 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02___Modificadores
     [TestClass]
     public class Tc_Modificadores
     {
-        private HomePagePOSTHEx HP;
-        private PoLogin_PDV Login;
+        private HomePageTHExPOS HP;
+        private PoLogin_PDV LG;
         private Po_Menus Menu;
         private Po_Modificadores Mod;
         public Tc_Modificadores()
         {
             IWebDriver driver = new ChromeDriver();
-            HP = new HomePagePOSTHEx(driver);
-            Login = new PoLogin_PDV(driver);
+            HP = new HomePageTHExPOS(driver);
+            LG = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
             Mod = new Po_Modificadores(driver);
         }                    
@@ -29,7 +29,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02___Modificadores
         public void AdicionarModificador()
         {
             HP.AdminTST();
-            Login.Admin();
+            LG.Admin();
             Menu.Modificadores();
             Mod.BtnAdicionarModificador();
             Mod.DadosDoModificador("Molho - Aut", "1", "2", "UN - Unidade");

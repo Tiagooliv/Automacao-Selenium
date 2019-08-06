@@ -5,14 +5,14 @@ using System.Threading;
 
 namespace PDV.Test.UI.ADMIN.PageObjects.Menus
 {
-   public class Po_Menus
+    public class Po_Menus
     {
         private IWebDriver driver;
         private WaitElement Wait;
 
         public Po_Menus(IWebDriver driver)
         {
-            this.driver = driver;    
+            this.driver = driver;
             Wait = new WaitElement(driver);
         }
 
@@ -22,14 +22,15 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
             var titulo = driver.FindElement(locator).Text;
             Assert.AreEqual(TituloLista, titulo);
         }
-        public void Menu (By locator)
+
+        public void Item()
         {
-            Wait.LocateElementAndClick((locator));                 
+            Wait.LocateElementAndClick(By.XPath("//thf-menu-item/div/div[1]/span"));
         }
 
-        public void Item ()
+        public void Configuracoes()
         {
-            Menu(By.XPath("//thf-menu-item/div/div[1]/span"));
+            Wait.LocateElementAndClick(By.XPath("//div[4]/thf-menu-item/div/div[1]/div"));
         }
 
         public void Produtos()
@@ -37,10 +38,9 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
             Item();
 
             //Produtos
-            Menu(By.XPath("//div[2]/div[1]/thf-menu-item/a/div/div"));
+            Wait.LocateElementAndClick(By.XPath("//div[2]/div[1]/thf-menu-item/a/div/div"));
 
             ValidarTituloLista(By.XPath("//div[1]/button/span[2]"), "PRODUTOS");
-
         }
 
         public void Modificadores()
@@ -48,25 +48,35 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
             Item();
 
             //Modificadores
-            Menu(By.XPath("//div[2]/div[2]/thf-menu-item/a/div/div"));
+            Wait.LocateElementAndClick(By.XPath("//div[2]/div[2]/thf-menu-item/a/div/div"));
 
             ValidarTituloLista(By.XPath("//div[1]/button/span[2]"), "MODIFICADORES");
         }
 
-        public void GruposDeProdutos ()
+        public void GruposDeProdutos()
         {
             Item();
 
             //Grupo de Produtos
-            Menu(By.XPath("//div/div[2]/div[3]/thf-menu-item/a"));
+            Wait.LocateElementAndClick(By.XPath("//div/div[2]/div[3]/thf-menu-item/a"));
 
             ValidarTituloLista(By.XPath("//div[1]/button/span[2]"), "GRUPOS");
 
             //driver.Navigate().Refresh();
         }
 
-     
+        public void PDV()
+        {
+            Configuracoes();
 
-        
+            //PDV
+            Wait.LocateElementAndClick(By.XPath("//div[4]/thf-menu-item/div/div[2]/div[1]/thf-menu-item/a/div/div"));
+
+            ValidarTituloLista(By.XPath("//div[1]/button/span[2]"), "PONTOS DE VENDA");
+        }
+
+
+
+
     }
 }

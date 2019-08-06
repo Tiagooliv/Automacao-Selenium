@@ -40,12 +40,12 @@ namespace PDV.Test.UI.CommonMethods.Utils
 
         public static class HPAdminTst
         {
-            public const string HPAdmin = "https://admin-pos-front-tst.totvscmnet-cloud.net/auth/login";
+            public const string HPAdmin = "https://admin-pos-front-tst.totvscmnet-cloud.net/auth/LG";
         }
 
         public static class HPPosTst
         {
-            public const string HPPos = "https://pos-front-tst.totvscmnet-cloud.net/auth/login";
+            public const string HPPos = "https://pos-front-tst.totvscmnet-cloud.net/auth/LG";
         }
 
     }

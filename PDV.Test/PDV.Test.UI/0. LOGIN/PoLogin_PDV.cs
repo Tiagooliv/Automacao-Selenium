@@ -12,19 +12,22 @@ namespace PDV.Test.UI.PageObjects.PDV
     public class PoLogin_PDV
 
     {
-        private IWebDriver _driver;
+        private IWebDriver driver;
         private WaitElement Wait;
 
         public PoLogin_PDV(IWebDriver driver)
         {
-            this._driver = driver;
+            this.driver = driver;
             Wait = new WaitElement(driver);
         }
 
         public void Admin()
         {
+            var email = driver.FindElement(By.XPath("//div/div[2]/input"));
+            email.Clear();
+            email.SendKeys("cm@totvs.com.br");
             Wait.LocateElementAndClick(By.XPath("//thf-container/div/div/form/div/thf-button/button"));
-            
+
         }
 
         public void POS()

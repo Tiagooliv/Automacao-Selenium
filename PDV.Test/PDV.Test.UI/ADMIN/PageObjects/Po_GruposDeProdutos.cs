@@ -28,10 +28,10 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public void DadosdoGrupo(string NomeGrupo, string GrupoFixo)
         {
             //Titulo Modal
-            Wait.LocateElement(By.ClassName("thf-modal-title")); 
+            Wait.LocateElement(By.ClassName("thf-modal-title"));
 
             driver.FindElement(By.XPath("//div[2]//div[1]/div[1]/thf-input/thf-field-container/div/div[2]/input")).SendKeys(NomeGrupo);
-            
+
             SelectElement grupofixo = new SelectElement(driver.FindElement(By.ClassName("thf-select")));
             grupofixo.SelectByText(GrupoFixo);
         }
@@ -39,7 +39,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public void IconeGrupo()
         {
             // ìcone Bebida
-            driver.FindElement(By.XPath("//pos-item-card[1]/div/div/div/img")).Click();
+            driver.FindElement(By.XPath("//ni-item-card[1]/div/div/div/img")).Click();
         }
 
         public void BtnSalvar()
@@ -68,13 +68,13 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             //Compara cadastro x resultado pesquisa
             if (nomegrupo != NomeGrupo)
             {
-                Assert.Fail("Falha no cadastro, grupo  " + NomeGrupo + "   não encontrado.");
+                Assert.Fail("Falha no cadastro, grupo  " + NomeGrupo + "   NÃO ENCONTRADO.");
             }
 
             //Verifica se o componente switch está ativo
 
             Sw.SwitchAtivo(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div"), "Class",
-            "thf-switch-container thf-clickable thf-switch-container-off","O NOVO GRUPO está INATIVO");
+            "thf-switch-container thf-clickable thf-switch-container-off", "O NOVO GRUPO está INATIVO");
 
             #region Antiga validação
             //var Switch = driver.FindElement(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div")).GetAttribute("Class");

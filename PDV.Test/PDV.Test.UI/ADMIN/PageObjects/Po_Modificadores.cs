@@ -25,14 +25,13 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         {
             Thread.Sleep(1000);
             Wait.LocateElementAndClick(By.XPath("//div[1]/div/thf-button/button"));
+
+            var titulo = driver.FindElement(By.ClassName("thf-font-subtitle")).Text;
+            Assert.AreEqual("Novo modificador", titulo);
         }
 
         public void DadosDoModificador(string NomeMod, string QtdMin, string QtdMax, string UnMed)
         {
-            Wait.LocateElement(By.ClassName("thf-font-subtitle"));
-            var Titulo = driver.FindElement(By.ClassName("thf-font-subtitle")).Text;
-            Assert.AreEqual("Novo modificador", Titulo); //Valida Titulo da Página
-
             driver.FindElement(By.ClassName("thf-input")).SendKeys(NomeMod);
             driver.FindElement(By.XPath("//thf-decimal[1]/thf-field-container/div/div[2]/input")).SendKeys(QtdMin);
             driver.FindElement(By.XPath("//thf-decimal[2]/thf-field-container/div/div[2]/input")).SendKeys(QtdMax);

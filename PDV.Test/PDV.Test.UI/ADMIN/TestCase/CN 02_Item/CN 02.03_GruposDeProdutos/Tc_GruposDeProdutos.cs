@@ -15,16 +15,16 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
     public class Tc_GruposDeProdutos
 
     {
-        private HomePagePOSTHEx HP;
-        private PoLogin_PDV Login;
+        private HomePageTHExPOS HP;
+        private PoLogin_PDV LG;
         private Po_Menus Menu;
         private Po_GruposDeProdutos Gr;
 
         public Tc_GruposDeProdutos()
         {
             IWebDriver driver = new ChromeDriver();
-            HP = new HomePagePOSTHEx(driver);
-            Login = new PoLogin_PDV(driver);
+            HP = new HomePageTHExPOS(driver);
+            LG = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
             Gr = new Po_GruposDeProdutos(driver);
         }
@@ -34,7 +34,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
 
         {
             HP.AdminTST();
-            Login.Admin();
+            LG.Admin();
             Menu.GruposDeProdutos();
             Gr.BtnAdicionarGrupo();
             Gr.DadosdoGrupo("Bebidas não Alcoólicas - Automatizado", "Bebidas");

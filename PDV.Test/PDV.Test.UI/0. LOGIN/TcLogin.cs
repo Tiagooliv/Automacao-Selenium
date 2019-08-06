@@ -6,19 +6,19 @@ using OpenQA.Selenium.Chrome;
 using PDV.Test.UI.CommonMethods.Utils;
 using PDV.Test.UI.PageObjects.PDV;
 
-namespace PDV.Test.UI.TestPlan.Login
+namespace PDV.Test.UI.TestPlan.LG
 {
     [TestClass]
-    public class TcLogin_POS
+    public class TcLG_POS
     {
         
-        private HomePagePOSTHEx HP;
+        private HomePageTHExPOS HP;
         private PoLogin_PDV L;
 
-        public TcLogin_POS()
+        public TcLG_POS()
         {
             IWebDriver driver = new ChromeDriver();
-            HP = new HomePagePOSTHEx(driver);
+            HP = new HomePageTHExPOS(driver);
             L = new PoLogin_PDV(driver);
         }
 
