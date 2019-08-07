@@ -28,3 +28,4 @@ C:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.csproj.CoreCompileInputs.c
 C:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.csproj.CopyComplete
 C:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.dll
 C:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.pdb
+C:\pos-aut\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.csprojAssemblyReference.cache
