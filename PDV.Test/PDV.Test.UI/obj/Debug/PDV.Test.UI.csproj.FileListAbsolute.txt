@@ -14,6 +14,21 @@ C:\Projeto_PDV\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.dll
 C:\Projeto_PDV\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.pdb
 C:\Projeto_PDV\PDV.Test\PDV.Test.UI\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 C:\Projeto_PDV\PDV.Test\PDV.Test.UI\bin\Debug\SeleniumExtras.WaitHelpers.dll
+D:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\PDV.Test.UI.dll
+D:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\PDV.Test.UI.pdb
+D:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\nunit.framework.dll
+D:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\SeleniumExtras.WaitHelpers.dll
+D:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\WebDriver.dll
+D:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\WebDriver.Support.dll
+D:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\nunit.framework.pdb
+D:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\nunit.framework.xml
+D:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\WebDriver.xml
+D:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\WebDriver.Support.xml
+D:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.csprojResolveAssemblyReference.cache
+D:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.csproj.CoreCompileInputs.cache
+D:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.csproj.CopyComplete
+D:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.dll
+D:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.pdb
 C:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\PDV.Test.UI.dll
 C:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\PDV.Test.UI.pdb
 C:\POS-AUT\PDV.Test\PDV.Test.UI\bin\Debug\nunit.framework.dll
@@ -28,4 +43,4 @@ C:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.csproj.CoreCompileInputs.c
 C:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.csproj.CopyComplete
 C:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.dll
 C:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.pdb
-C:\pos-aut\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.csprojAssemblyReference.cache
+C:\POS-AUT\PDV.Test\PDV.Test.UI\obj\Debug\PDV.Test.UI.csprojAssemblyReference.cache

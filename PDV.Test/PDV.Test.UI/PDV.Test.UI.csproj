@@ -46,6 +46,7 @@
     <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
     </Reference>
@@ -60,15 +61,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="1. CommonMethods\UrlPDV.cs" />
+    <Compile Include="1. CommonMethods\SelectElement.cs" />
+    <Compile Include="1. CommonMethods\ValidateSwitch.cs" />
+    <Compile Include="1. CommonMethods\HomePageTHExPOS.cs" />
     <Compile Include="1. CommonMethods\TestLocalTools.cs" />
     <Compile Include="1. CommonMethods\WaitElement.cs" />
     <Compile Include="0. LOGIN\PoLogin_PDV.cs" />
     <Compile Include="ADMIN\PageObjects\Po_GruposDeProdutos.cs" />
     <Compile Include="ADMIN\PageObjects\Po_Menus.cs" />
-    <Compile Include="ADMIN\PageObjects\Po_Produto.cs" />
-    <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.01_Produtos\TC_Produtos.cs" />
+    <Compile Include="ADMIN\PageObjects\Po_Modificadores.cs" />
+    <Compile Include="ADMIN\PageObjects\Po_PDV.cs" />
+    <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.02 - Modificadores\Tc_Modificadores.cs" />
     <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.03_GruposDeProdutos\Tc_GruposDeProdutos.cs" />
+    <Compile Include="ADMIN\TestCase\CN 03_PontoDeVenda\CN 03.01_PDV\Tc_PDV.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="0. LOGIN\TcLogin.cs" />
   </ItemGroup>

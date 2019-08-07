@@ -11,16 +11,16 @@ namespace PDV.Test.UI.CommonMethods.Utils
 {
     public enum Browser
     {
-        Chrome, 
+        Chrome,
         Firefox,
-           }
+    }
     public class TestLocalTools
     {
         private IWebDriver _driver;
 
-        public IWebDriver Instance(Browser browser) 
+        public IWebDriver Instance(Browser browser)
         {
-          switch (browser)
+            switch (browser)
             {
                 case Browser.Chrome:
                     if (_driver != null) return _driver;
@@ -34,18 +34,18 @@ namespace PDV.Test.UI.CommonMethods.Utils
                     _driver.Manage().Window.Maximize();
                     return _driver;
 
-                default:throw new ArgumentOutOfRangeException(nameof(browser), browser, null);
+                default: throw new ArgumentOutOfRangeException(nameof(browser), browser, null);
             }
         }
 
-        public static class UrlAdminTst
+        public static class HPAdminTst
         {
-            public const string UrlAdmin = "https://admin-pos-front-tst.totvscmnet-cloud.net/auth/login";
+            public const string HPAdmin = "https://admin-pos-front-tst.totvscmnet-cloud.net/auth/LG";
         }
 
-        public static class UrlPosTst
+        public static class HPPosTst
         {
-            public const string UrlPos = "https://pos-front-tst.totvscmnet-cloud.net/auth/login";
+            public const string HPPos = "https://pos-front-tst.totvscmnet-cloud.net/auth/LG";
         }
 
     }
