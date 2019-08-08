@@ -32,10 +32,10 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02___Modificadores
             LG.Admin();
             Menu.Modificadores();
             Mod.BtnAdicionarModificador();
-            Mod.DadosDoModificador("Molho - Aut", "1", "2", "UN - Unidade");
-            Mod.Modificador("Branco", "Molho Branco", "5");
+            Mod.DadosDoModificador("Chá - Aut", "1", "2", "UN - Unidade");
+            Mod.Modificador("Chá", "Chá de menta", "5");
             Mod.BtnSalvar();
-            Mod.ValidarCadastro("Molho - Aut");
+            Mod.ValidarCadastro("Chá - Aut");
             Menu.Inicio();
         }
 

@@ -37,10 +37,10 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
             LG.Admin();
             Menu.GruposDeProdutos();
             Gr.BtnAdicionarGrupo();
-            Gr.DadosdoGrupo("Bebidas não Alcoólicas - Automatizado", "Bebidas");
+            Gr.DadosdoGrupo("Sobremesas - Aut", "Bebidas");
             Gr.IconeGrupo();
             Gr.BtnSalvar();
-            Gr.ValidarCadastro("Bebidas não Alcoólicas - Automatizado");
+            Gr.ValidarCadastro("Sobremesas - Aut");
             Menu.Inicio();
 
         }

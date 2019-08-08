@@ -35,7 +35,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_03_PontoDeVenda.CN_03._01_PDV
             PDV.BtnAdicionarPDV();
             PDV.Dados("PDV - Aut", "cm", "Portugal", "Espanhol");
             PDV.TaxaServico("7", "10", "13");
-            PDV.AssociarItens("Torta de Limão");
+            PDV.AssociarItens("Torta de Limão - Aut");
             PDV.BtnSalvar();
             PDV.ValidarCadastro("PDV - Aut");
             Menu.Inicio();
