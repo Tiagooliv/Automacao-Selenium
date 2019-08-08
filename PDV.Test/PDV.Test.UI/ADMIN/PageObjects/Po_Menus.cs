@@ -23,6 +23,12 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
             Assert.AreEqual(TituloLista, titulo);
         }
 
+        public void Inicio()
+        {
+            driver.FindElement(By.XPath("//div[2]/nav/div/div/div[1]/thf-menu-item/a/div/div")).Click();
+            Thread.Sleep(5000);
+            driver.Close();
+        }
         public void Item()
         {
             Wait.LocateElementAndClick(By.XPath("//thf-menu-item/div/div[1]/span"));

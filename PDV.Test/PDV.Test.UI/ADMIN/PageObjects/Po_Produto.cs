@@ -1,8 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using PDV.Test.UI._1._CommonMethods;
 using PDV.Test.UI.POS.CommonMethods;
 using System.Threading;
+using System.Windows;
 
 
 namespace PDV.Test.UI.ADMIN.PageObjects
@@ -11,11 +13,13 @@ namespace PDV.Test.UI.ADMIN.PageObjects
     {
         public IWebDriver driver;
         public WaitElement Wait;
+        private ValidateSwitch Sw;
 
         public Po_Produto(IWebDriver driver)
         {
             this.driver = driver;
             Wait = new WaitElement(driver);
+            Sw = new ValidateSwitch(driver);
         }
 
         public void BtnAdicionarProduto()
@@ -32,17 +36,13 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             var codinterno = driver.FindElement(By.XPath("//div/div[2]/div/div[1]/thf-input[2]/thf-field-container/div/div[2]/input"));
             codinterno.SendKeys(CodInterno);
 
-            
-            var tab = driver.FindElement(By.XPath("//div/div[2]/div/div[1]/thf-input[2]/thf-field-container/div/div[2]/input"));
-            tab.SendKeys(Keys.Tab);
+            codinterno.SendKeys(Keys.Tab);
 
             var clique = driver.FindElement(By.XPath("//div/div[2]/div/div[1]/thf-multiselect/thf-field-container/div/div[2]/input"));
             clique.SendKeys(Keys.ArrowDown);
 
-            Thread.Sleep(1000);
-
-            driver.FindElement(By.XPath("//div/div[2]/div/div[1]/thf-multiselect/thf-field-container/div/div[2]/input"));
             clique.SendKeys(Keys.ArrowDown);
+
 
             Thread.Sleep(1000);
 
@@ -51,23 +51,18 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
             driver.FindElement(By.XPath("//div/thf-multiselect-dropdown/div/ul/thf-multiselect-item/li/a")).Click();
 
-            var tab1 = driver.FindElement(By.XPath("//div/thf-multiselect-search/div/input"));
-            tab1.SendKeys(Keys.Tab);
+            grupoproduto.SendKeys(Keys.Tab);
+
 
             var unimedida = driver.FindElement(By.XPath("//div/div[1]/thf-select/thf-field-container/div/select"));
-            unimedida.SendKeys(Keys.ArrowDown);
 
-            driver.FindElement(By.XPath("//div/div[1]/thf-select/thf-field-container/div/select"));
             unimedida.SendKeys(Keys.ArrowDown);
-
-            driver.FindElement(By.XPath("//div/div[1]/thf-select/thf-field-container/div/select"));
+            unimedida.SendKeys(Keys.ArrowDown);
             unimedida.SendKeys(UnidMedida);
-
-            driver.FindElement(By.XPath("//div/div[1]/thf-select/thf-field-container/div/select"));
             unimedida.SendKeys(Keys.Enter);
 
-
             var prunitario = driver.FindElement(By.XPath("//div/div[2]/thf-decimal/thf-field-container/div/div[2]/input"));
+
             prunitario.SendKeys(PrUnitario);
 
 
@@ -80,11 +75,13 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             driver.FindElement(By.XPath("//div[2]/div/div/div[2]/div/thf-multiselect/thf-field-container/div/div[2]/div[1]/span")).Click();
 
             var modificadores = driver.FindElement(By.XPath("//div[2]/div/thf-multiselect/thf-field-container/div/thf-multiselect-dropdown/div/thf-multiselect-search/div/input"));
-            modificadores.SendKeys(Modificadores);
 
-            driver.FindElement(By.XPath("//div/div[2]/div/div/div[2]/div/thf-multiselect/thf-field-container/div/thf-multiselect-dropdown/div/ul/thf-multiselect-item/li/a/label")).Click();
+            modificadores.SendKeys(Modificadores);
+            modificadores.Click();
+
 
             var tab = driver.FindElement(By.XPath("//div/div[2]/div/thf-multiselect/thf-field-container/div/div[2]/input"));
+
             tab.SendKeys(Keys.Tab);
             
         }
@@ -92,14 +89,9 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public void Fiscais()
         {
 
-            //driver.FindElement(By.XPath("//div[4]/ni-collapsible-widget/div/div[1]/button/span[2]")).Click();
-
             driver.FindElement(By.XPath("//div[4]/ni-collapsible-widget/div/div[2]/div/div/thf-select/thf-field-container/div/div[2]/div/div/span")).Click();
 
-            driver.FindElement(By.XPath("//div[4]/ni-collapsible-widget/div/div[2]/div/div/thf-select/thf-field-container/div/div[2]/ul/li/div/span")).Click();
-
-            //driver.FindElement(By.XPath("//div/div/div/div/pos-item-form/form/div[4]/ni-collapsible-widget/div/div[2]/div/div/thf-select/thf-field-container/div/div[2]/ul/li/div/span")).Click();
-
+            driver.FindElement(By.XPath("//div[4]/ni-collapsible-widget/div/div[2]/div/div/thf-select/thf-field-container/div/div[2]/ul/li/div/span")).Click();     
         }
 
         public void BtnSalvar()
@@ -123,6 +115,13 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             {
                 Assert.Fail("Falha no cadastro do produto  " + NomeProduto + "   não encontrado.");
             }
+
+            //Verifica se o componente switch está ativo
+
+            Sw.SwitchAtivo(By.XPath("//tr/td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div/div"), "Class",
+           "thf-switch-button thf-switch-button-off", "O NOVO PRODUTO está INATIVO");
+
+            Thread.Sleep(10000);
 
         }
     }
