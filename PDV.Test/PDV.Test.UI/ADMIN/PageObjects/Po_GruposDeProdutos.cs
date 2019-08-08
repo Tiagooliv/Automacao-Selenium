@@ -76,6 +76,8 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             Sw.SwitchAtivo(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div"), "Class",
             "thf-switch-container thf-clickable thf-switch-container-off", "O NOVO GRUPO está INATIVO");
 
+            Thread.Sleep(10000);
+
             #region Antiga validação
             //var Switch = driver.FindElement(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div")).GetAttribute("Class");
 

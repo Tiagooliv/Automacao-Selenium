@@ -33,7 +33,12 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_03_PontoDeVenda.CN_03._01_PDV
             LG.Admin();
             Menu.PDV();
             PDV.BtnAdicionarPDV();
-            PDV.Dados("CMNet Soluces", "cm", "Portugal", "Espanhol");
+            PDV.Dados("PDV - Aut", "cm", "Portugal", "Espanhol");
+            PDV.TaxaServico("7", "10", "13");
+            PDV.AssociarItens("Torta de Limão");
+            PDV.BtnSalvar();
+            PDV.ValidarCadastro("PDV - Aut");
+            Menu.Inicio();
 
 
         }

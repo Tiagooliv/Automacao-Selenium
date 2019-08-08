@@ -36,6 +36,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02___Modificadores
             Mod.Modificador("Branco", "Molho Branco", "5");
             Mod.BtnSalvar();
             Mod.ValidarCadastro("Molho - Aut");
+            Menu.Inicio();
         }
 
         [TestMethod]

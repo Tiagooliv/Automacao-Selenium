@@ -41,6 +41,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
             Gr.IconeGrupo();
             Gr.BtnSalvar();
             Gr.ValidarCadastro("Bebidas não Alcoólicas - Automatizado");
+            Menu.Inicio();
 
         }
 
