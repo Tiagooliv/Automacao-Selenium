@@ -74,6 +74,8 @@
     <Compile Include="ADMIN\PageObjects\Po_Menus.cs" />
     <Compile Include="ADMIN\PageObjects\Po_Modificadores.cs" />
     <Compile Include="ADMIN\PageObjects\Po_PDV.cs" />
+    <Compile Include="ADMIN\PageObjects\Po_Produto.cs" />
+    <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.01_Produtos\Tc_Produtos.cs" />
     <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.02 - Modificadores\Tc_Modificadores.cs" />
     <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.03_GruposDeProdutos\Tc_GruposDeProdutos.cs" />
     <Compile Include="ADMIN\TestCase\CN 03_PontoDeVenda\CN 03.01_PDV\Tc_PDV.cs" />
@@ -84,6 +86,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ADMIN\TestCase\CN Produto\" />
     <Folder Include="POS\PageObjects\" />
     <Folder Include="POS\TestPlan\" />
   </ItemGroup>
