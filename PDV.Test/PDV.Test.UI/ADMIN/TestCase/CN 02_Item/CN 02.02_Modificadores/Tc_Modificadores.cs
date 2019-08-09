@@ -7,7 +7,8 @@ using PDV.Test.UI.CommonMethods.Utils;
 using PDV.Test.UI.PageObjects.PDV;
 using NUnit.Framework;
 
-namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02___Modificadores
+namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
+          
 {
     [TestClass]
     public class Tc_Modificadores

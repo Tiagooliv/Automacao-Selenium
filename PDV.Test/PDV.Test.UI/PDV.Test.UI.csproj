@@ -76,7 +76,7 @@
     <Compile Include="ADMIN\PageObjects\Po_PDV.cs" />
     <Compile Include="ADMIN\PageObjects\Po_Produto.cs" />
     <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.01_Produtos\Tc_Produtos.cs" />
-    <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.02 - Modificadores\Tc_Modificadores.cs" />
+    <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.02_Modificadores\Tc_Modificadores.cs" />
     <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.03_GruposDeProdutos\Tc_GruposDeProdutos.cs" />
     <Compile Include="ADMIN\TestCase\CN 03_PontoDeVenda\CN 03.01_PDV\Tc_PDV.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,18 +86,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ADMIN\TestCase\CN Produto\" />
     <Folder Include="POS\PageObjects\" />
     <Folder Include="POS\TestPlan\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Selenium.Chrome.WebDriver.74.0.0\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.74.0.0\build\Selenium.Chrome.WebDriver.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.74.0.0\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.74.0.0\build\Selenium.Chrome.WebDriver.targets'))" />
     <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.74.0.0\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.74.0.0\build\Selenium.Chrome.WebDriver.targets'))" />
   </Target>
+  <Import Project="..\packages\Selenium.Chrome.WebDriver.74.0.0\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.74.0.0\build\Selenium.Chrome.WebDriver.targets')" />
 </Project>
