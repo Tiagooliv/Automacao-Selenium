@@ -7,7 +7,7 @@ using PDV.Test.UI.CommonMethods.Utils;
 using PDV.Test.UI.PageObjects.PDV;
 using System;
 
-namespace TestCase.CN_02_ITEM.CN_02._01_Produtos.CN_02._01._01_CadastrarProduto
+namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
 {
     [TestClass]
     public class TC_Produtos

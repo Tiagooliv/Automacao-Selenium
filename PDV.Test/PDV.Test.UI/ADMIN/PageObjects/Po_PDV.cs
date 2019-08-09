@@ -71,22 +71,28 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             try
             {
                 //Valida resultado
-                var result = driver.FindElement(By.XPath("//tbody[1]/tr/td[2]/div/span")).Text;
-                Assert.AreEqual(NomeProd, result);
+                var result = driver.FindElement(By.XPath("//tbody[1]/tr/td[2]/div/span")).Text.ToUpper();
+                Assert.AreEqual(NomeProd.ToUpper(), result);
 
-                //Ativa Switch
-                driver.FindElement(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div/div/span")).Click();
+                //Ativa o Switch
+                driver.FindElement(By.XPath("//tr/td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div")).Click();
             }
-            catch
+
+            catch (AssertFailedException) //Resultado <> da busca
             {
-                //Caso não encontre o item
+                Assert.Fail("ITEM " + NomeProd + "  NÃO ENCONTRADO");
+            }
+
+            catch //Resultado vazio
+            {
                 var x = driver.FindElement(By.XPath("//ni-table[1]/thf-container/div/div/div/div/div/table/tbody/tr/td/span")).Text;
 
-                if (x!=null)
+                if (x != null)
                 {
-                    Assert.Fail("Item não encontrado !!");
+                    Assert.Fail("ITEM " + NomeProd + "  NÃO ENCONTRADO");
                 }
-            }          
+            }
+
         }
 
         public void BtnSalvar()
@@ -126,7 +132,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             Thread.Sleep(10000);
 
         }
-               
+
 
     }
 }
