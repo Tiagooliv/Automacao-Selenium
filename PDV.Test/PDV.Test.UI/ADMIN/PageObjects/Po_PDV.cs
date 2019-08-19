@@ -108,6 +108,9 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
             // Valida a mensagem 
             Assert.AreEqual("Ponto de venda cadastrado com sucesso.", Msg);
+            Thread.Sleep(3000);
+            driver.FindElement(By.XPath("/html/body/thf-toaster/div/div")).Click();
+
         }
 
         public void ValidarCadastro(string NomePDV)
@@ -129,7 +132,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             Sw.SwitchAtivo(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div"), "Class",
             "thf-switch-container thf-clickable thf-switch-container-off", "O NOVO PDV está INATIVO");
 
-            Thread.Sleep(10000);
+            Thread.Sleep(3000);
 
         }
 

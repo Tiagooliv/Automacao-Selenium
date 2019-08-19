@@ -79,7 +79,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
             //PDV
             Wait.LocateElementAndClick(By.XPath("//div[4]/thf-menu-item/div/div[2]/div[1]/thf-menu-item/a/div/div"));
 
-            ValidarTituloLista(By.XPath("//div[1]/button/span[2]"), "PONTOS DE VENDA");
+            ValidarTituloLista(By.XPath("//div/ni-collapsible-widget/div/div[1]/button/span[2]"), "PONTOS DE VENDA");
         }
 
 

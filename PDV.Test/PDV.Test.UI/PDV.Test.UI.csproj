@@ -75,6 +75,7 @@
     <Compile Include="ADMIN\PageObjects\Po_Modificadores.cs" />
     <Compile Include="ADMIN\PageObjects\Po_PDV.cs" />
     <Compile Include="ADMIN\PageObjects\Po_Produto.cs" />
+    <Compile Include="ADMIN\TestCase\CN 00_Regressao\Execucao_Cenarios.cs" />
     <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.01_Produtos\Tc_Produtos.cs" />
     <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.02_Modificadores\Tc_Modificadores.cs" />
     <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.03_GruposDeProdutos\Tc_GruposDeProdutos.cs" />
