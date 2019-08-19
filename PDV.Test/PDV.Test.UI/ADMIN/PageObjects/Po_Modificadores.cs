@@ -59,8 +59,11 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             driver.FindElement(By.XPath("//thf-button[2]/button/span")).Click();
             Wait.LocateElement(By.XPath("/html/body/thf-toaster/div/div"));//Aguarda mensagem na tela "Cadastro com sucesso"
 
+            // Valida a mensagem 
             var Msg = driver.FindElement(By.XPath("/html/body/thf-toaster/div/div")).Text;
-            Assert.AreEqual("Modificador cadastrado com sucesso.", Msg); // Valida a mensagem 
+            Assert.AreEqual("Modificador cadastrado com sucesso.", Msg);
+            Thread.Sleep(3000);
+            driver.FindElement(By.XPath("/html/body/thf-toaster/div/div")).Click();
         }
 
         public void ValidarCadastro(string NomeMod)
@@ -82,7 +85,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             Sw.SwitchAtivo(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div"), "Class",
            "thf-switch-container thf-clickable thf-switch-container-off", "O NOVO MODIFICADOR está INATIVO");
 
-            Thread.Sleep(10000);
+            Thread.Sleep(3000);
 
             #region Antiga validação 
             //var Switch = driver.FindElement(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div")).GetAttribute("Class");
