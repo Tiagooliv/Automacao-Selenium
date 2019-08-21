@@ -3,9 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using PDV.Test.UI._1._CommonMethods;
 using PDV.Test.UI.POS.CommonMethods;
-using System;
 using System.Threading;
-using Validation;
 
 namespace PDV.Test.UI.ADMIN.PageObjects
 {
@@ -14,14 +12,16 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         private IWebDriver driver;
         private WaitElement Wait;
         private Select_Element Select;
-        private ValidateSwitch Sw;
+        private ValidarSwitch Sw;
+        private ValidarCadastro Vr;
 
         public Po_PDV(IWebDriver driver)
         {
             this.driver = driver;
             Wait = new WaitElement(driver);
             Select = new Select_Element(driver);
-            Sw = new ValidateSwitch(driver);
+            Sw = new ValidarSwitch(driver);
+            Vr = new ValidarCadastro(driver);
         }
 
         public void BtnAdicionarPDV()
@@ -113,29 +113,29 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
         }
 
-        public void ValidarCadastro(string NomePDV)
-        {
-            //Pesquisa grupo cadastrado
-            driver.FindElement(By.ClassName("thf-input-icon-left")).SendKeys(NomePDV);
+        #region Antiga Validação
+        //public void ValidarCadastro(string NomePDV)
+        //{
+        //    //Pesquisa grupo cadastrado
+        //    driver.FindElement(By.ClassName("thf-input-icon-left")).SendKeys(NomePDV);
 
-            //Guarda o primeiro resultado da lista
-            var nomepdv = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;
+        //    //Guarda o primeiro resultado da lista
+        //    var nomepdv = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;
 
-            //Compara cadastro x resultado pesquisa
-            if (nomepdv != NomePDV)
-            {
-                Assert.Fail("Falha no cadastro, " + NomePDV + "   NÃO ENCONTRADO.");
-            }
+        //    //Compara cadastro x resultado pesquisa
+        //    if (nomepdv != NomePDV)
+        //    {
+        //        Assert.Fail("Falha no cadastro, " + NomePDV + "   NÃO ENCONTRADO.");
+        //    }
 
-            //Verifica se o componente switch está ativo
+        //    //Verifica se o componente switch está ativo
 
-            Sw.SwitchAtivo(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div"), "Class",
-            "thf-switch-container thf-clickable thf-switch-container-off", "O NOVO PDV está INATIVO");
+        //    Sw.SwitchAtivo(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div"), "Class",
+        //    "thf-switch-container thf-clickable thf-switch-container-off", "O NOVO PDV está INATIVO");
 
-            Thread.Sleep(3000);
-
-        }
-
+        //    Thread.Sleep(3000);
+        //}
+        #endregion
 
     }
 }

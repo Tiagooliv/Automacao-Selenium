@@ -26,8 +26,8 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
         public void Inicio()
         {
             Wait.LocateElementAndClick(By.XPath("//div[1]/thf-menu-item/a/div/div"));
-            Thread.Sleep(5000);
-            driver.Close();
+            //Thread.Sleep(5000);
+            //driver.Close();
         }
 
         public void Item()

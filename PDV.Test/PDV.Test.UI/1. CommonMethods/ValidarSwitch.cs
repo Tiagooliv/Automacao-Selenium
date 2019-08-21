@@ -4,11 +4,11 @@ using OpenQA.Selenium;
 
 namespace PDV.Test.UI._1._CommonMethods
 {
-    public class ValidateSwitch
+    public class ValidarSwitch
     {
         IWebDriver driver;
 
-        public ValidateSwitch(IWebDriver driver)
+        public ValidarSwitch(IWebDriver driver)
         {
             this.driver = driver;
         }

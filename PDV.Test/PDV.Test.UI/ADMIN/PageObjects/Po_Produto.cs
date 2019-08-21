@@ -12,15 +12,15 @@ namespace PDV.Test.UI.ADMIN.PageObjects
     public class Po_Produto
     {
         public IWebDriver driver;
-        public WaitElement Wait;
-        private ValidateSwitch Sw;
-        private Select_Element Select;
+        WaitElement Wait;
+        ValidarSwitch Sw;
+        Select_Element Select;
 
         public Po_Produto(IWebDriver driver)
         {
             this.driver = driver;
             Wait = new WaitElement(driver);
-            Sw = new ValidateSwitch(driver);
+            Sw = new ValidarSwitch(driver);
             Select = new Select_Element(driver);
         }
 
@@ -92,24 +92,26 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
         }
 
-        public void ValidarCadastro(string NomeProduto)
-        {
-            var Pesquisaproduto = driver.FindElement(By.XPath("//div/div[1]/thf-input/thf-field-container/div/div[2]/input"));
-            Pesquisaproduto.SendKeys(NomeProduto);
+        #region Validação antiga
+        //public void ValidarCadastro(string NomeProduto)
+        //{
+        //    var Pesquisaproduto = driver.FindElement(By.XPath("//div/div[1]/thf-input/thf-field-container/div/div[2]/input"));
+        //    Pesquisaproduto.SendKeys(NomeProduto);
 
-            var nomeproduto = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;
+        //    var nomeproduto = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;
 
-            if (nomeproduto != NomeProduto)
-            {
-                Assert.Fail("Falha no cadastro do produto  " + NomeProduto + "   não encontrado.");
-            }
+        //    if (nomeproduto != NomeProduto)
+        //    {
+        //        Assert.Fail("Falha no cadastro do produto  " + NomeProduto + "   não encontrado.");
+        //    }
 
-            //Verifica se o componente switch está ativo
-            Sw.SwitchAtivo(By.XPath("//tr/td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div/div"), "Class",
-           "thf-switch-button thf-switch-button-off", "O NOVO PRODUTO está INATIVO");
+        //    //Verifica se o componente switch está ativo
+        //    Sw.SwitchAtivo(By.XPath("//tr/td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div/div"), "Class",
+        //   "thf-switch-button thf-switch-button-off", "O NOVO PRODUTO está INATIVO");
 
-            Thread.Sleep(3000);
+        //    Thread.Sleep(3000);
 
-        }
+        //}
+        #endregion
     }
 }

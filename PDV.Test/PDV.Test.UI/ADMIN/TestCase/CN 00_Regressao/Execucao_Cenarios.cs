@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using PDV.Test.UI._1._CommonMethods;
 using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
@@ -13,13 +14,14 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
     public class Execucao_Cenarios
     {
         #region Fields
-        private HomePageTHExPOS HP;
-        private PoLogin_PDV LG;
-        private Po_Menus Menu;
-        private Po_GruposDeProdutos Gr;
-        private Po_Modificadores Mod;
-        private Po_Produto Pr;
-        private Po_PDV PDV;
+        HomePageTHExPOS HP;
+        PoLogin_PDV LG;
+        Po_Menus Menu;
+        Po_GruposDeProdutos Gr;
+        Po_Modificadores Mod;
+        Po_Produto Pr;
+        Po_PDV PDV;
+        ValidarCadastro VC;
         #endregion
 
         public Execucao_Cenarios()
@@ -32,7 +34,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             Mod = new Po_Modificadores(driver);
             Pr = new Po_Produto(driver);
             PDV = new Po_PDV(driver);
-
+            VC = new ValidarCadastro(driver);
         }
 
         [TestMethod]
@@ -48,7 +50,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             Gr.DadosdoGrupo("Sobremesas - Aut", "Bebidas");
             Gr.IconeGrupo();
             Gr.BtnSalvar();
-            Gr.ValidarCadastro("Sobremesas - Aut");
+            VC.ValidaCadastro("Sobremesas - Aut");
 
             //Modificadores
 
@@ -57,7 +59,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             Mod.DadosDoModificador("Chá - Aut", "1", "2", "UN - Unidade");
             Mod.Modificador("Chá", "Chá de menta", "5");
             Mod.BtnSalvar();
-            Mod.ValidarCadastro("Chá - Aut");
+            VC.ValidaCadastro("Chá - Aut");
 
             //Produtos
 
@@ -67,7 +69,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             Pr.Detalhes("Chá - Aut");
             Pr.Fiscais();
             Pr.BtnSalvar();
-            Pr.ValidarCadastro("Torta de limão - Aut");
+            VC.ValidaCadastro("Torta de limão - Aut");
 
             //PDV
 
@@ -75,11 +77,10 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             PDV.BtnAdicionarPDV();
             PDV.Dados("PDV - Aut", "cm", "Portugal", "Espanhol");
             PDV.TaxaServico("7", "10", "13");
-            PDV.AssociarItens("Torta de Limão - Aut");
+            PDV.AssociarItens("Torta de limão - Aut");
             PDV.BtnSalvar();
-            PDV.ValidarCadastro("PDV - Aut");
+            VC.ValidaCadastro("PDV - Aut");
             Menu.Inicio();
-
 
         }
 

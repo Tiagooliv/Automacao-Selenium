@@ -10,14 +10,15 @@ namespace PDV.Test.UI.ADMIN.PageObjects
     public class Po_GruposDeProdutos
     {
         public IWebDriver driver;
-        public WaitElement Wait;
-        public ValidateSwitch Sw;
-
+        WaitElement Wait;
+        ValidarSwitch Sw;
+        ValidarCadastro Vc;
         public Po_GruposDeProdutos(IWebDriver driver)
         {
             this.driver = driver;
             Wait = new WaitElement(driver);
-            Sw = new ValidateSwitch(driver);
+            Sw = new ValidarSwitch(driver);
+            Vc = new ValidarCadastro(driver);
         }
 
         public void BtnAdicionarGrupo()
@@ -39,7 +40,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public void IconeGrupo()
         {
             // ìcone Bebida
-            driver.FindElement(By.XPath("//ni-item-card[1]/div/div/div/img")).Click();
+            driver.FindElement(By.XPath("//ni-item-card[3]/div/div/div/img")).Click();
         }
 
         public void BtnSalvar()
@@ -59,36 +60,33 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             driver.FindElement(By.XPath("/html/body/thf-toaster/div/div")).Click();
         }
 
-        public void ValidarCadastro(string NomeGrupo)
-        {
-            //Pesquisa grupo cadastrado
-            driver.FindElement(By.ClassName("thf-input-icon-left")).SendKeys(NomeGrupo);
+        #region Antiga validação
+        //public void ValidarCadastro(string NomeGrupo)
+        //{
+        //    //Pesquisa grupo cadastrado
+        //    driver.FindElement(By.ClassName("thf-input-icon-left")).SendKeys(NomeGrupo);
 
-            //Guarda o primeiro resultado da lista
-            var nomegrupo = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;
+        //    //Guarda o primeiro resultado da lista
+        //    var nomegrupo = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;
 
-            //Compara cadastro x resultado pesquisa
-            if (nomegrupo != NomeGrupo)
-            {
-                Assert.Fail("Falha no cadastro, grupo  " + NomeGrupo + "   NÃO ENCONTRADO.");
-            }
+        //    //Compara cadastro x resultado pesquisa
+        //    if (nomegrupo != NomeGrupo)
+        //    {
+        //        Assert.Fail("Falha no cadastro, grupo  " + NomeGrupo + "   NÃO ENCONTRADO.");
+        //    }
 
-            //Verifica se o componente switch está ativo
+        //    //Verifica se o componente switch está ativo
 
-            Sw.SwitchAtivo(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div"), "Class",
-            "thf-switch-container thf-clickable thf-switch-container-off", "O NOVO GRUPO está INATIVO");
+        //    Sw.SwitchAtivo(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div"), "Class",
+        //    "thf-switch-container thf-clickable thf-switch-container-off", "O NOVO GRUPO está INATIVO");
 
-            Thread.Sleep(3000);
+        //    Thread.Sleep(3000);
+        //}
+        #endregion
 
-            #region Antiga validação
-            //var Switch = driver.FindElement(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div")).GetAttribute("Class");
 
-            //if (Switch.Equals("thf-switch-container thf-clickable thf-switch-container-off"))
-            //{
-            //    Assert.Fail("Grupo Inativo");
-            //}
-            #endregion
-        }
+
+
 
     }
 }

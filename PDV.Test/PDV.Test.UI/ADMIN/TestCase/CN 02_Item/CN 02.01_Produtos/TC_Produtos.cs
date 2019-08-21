@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using PDV.Test.UI._1._CommonMethods;
 using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
@@ -12,11 +13,14 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
     [TestClass]
     public class TC_Produtos
     {
+        #region Fields
         private IWebDriver driver;
-        private HomePageTHExPOS Url;
-        private PoLogin_PDV Login;
-        private Po_Menus Menu;
-        private Po_Produto Pr;
+        HomePageTHExPOS Url;
+        PoLogin_PDV Login;
+        Po_Menus Menu;
+        Po_Produto Pr;
+        ValidarCadastro VC;
+        #endregion
 
         public TC_Produtos()
         {
@@ -25,6 +29,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
             Login = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
             Pr = new Po_Produto(driver);
+            VC = new ValidarCadastro(driver);
         }
 
         [TestMethod]
@@ -38,7 +43,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
             Pr.Detalhes("Chá - Aut");
             Pr.Fiscais();
             Pr.BtnSalvar();
-            Pr.ValidarCadastro("Torta de limão - Aut");
+            VC.ValidaCadastro("Torta de limão - Aut");
             Menu.Inicio();
         }
     }

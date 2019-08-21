@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using PDV.Test.UI._1._CommonMethods;
 using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
@@ -16,6 +17,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_03_PontoDeVenda.CN_03._01_PDV
         private PoLogin_PDV LG;
         private Po_Menus Menu;
         private Po_PDV PDV;
+        private ValidarCadastro VR;
 
         public Tc_PDV()
         {
@@ -24,6 +26,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_03_PontoDeVenda.CN_03._01_PDV
             LG = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
             PDV = new Po_PDV(driver);
+            VR = new ValidarCadastro(driver);
         }
 
         [TestMethod]
@@ -35,12 +38,11 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_03_PontoDeVenda.CN_03._01_PDV
             PDV.BtnAdicionarPDV();
             PDV.Dados("PDV - Aut", "cm", "Portugal", "Espanhol");
             PDV.TaxaServico("7", "10", "13");
-            PDV.AssociarItens("Torta de Limão - Aut");
+            PDV.AssociarItens("Churrasco");
             PDV.BtnSalvar();
-            PDV.ValidarCadastro("PDV - Aut");
+            VR.ValidaCadastro("PDV - Aut");
             Menu.Inicio();
-
-
+            
         }
     }
 }

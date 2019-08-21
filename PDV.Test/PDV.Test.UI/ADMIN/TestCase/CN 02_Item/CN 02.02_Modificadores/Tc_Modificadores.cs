@@ -6,6 +6,7 @@ using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
 using PDV.Test.UI.PageObjects.PDV;
 using NUnit.Framework;
+using PDV.Test.UI._1._CommonMethods;
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
           
@@ -13,10 +14,13 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
     [TestClass]
     public class Tc_Modificadores
     {
-        private HomePageTHExPOS HP;
-        private PoLogin_PDV LG;
-        private Po_Menus Menu;
-        private Po_Modificadores Mod;
+        #region Fields
+        HomePageTHExPOS HP;
+        PoLogin_PDV LG;
+        Po_Menus Menu;
+        Po_Modificadores Mod;
+        ValidarCadastro VC;
+        #endregion
         public Tc_Modificadores()
         {
             IWebDriver driver = new ChromeDriver();
@@ -24,6 +28,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
             LG = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
             Mod = new Po_Modificadores(driver);
+            VC = new ValidarCadastro(driver);
         }                    
 
         [TestMethod]
@@ -36,7 +41,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
             Mod.DadosDoModificador("Chá - Aut", "1", "2", "UN - Unidade");
             Mod.Modificador("Chá", "Chá de menta", "5");
             Mod.BtnSalvar();
-            Mod.ValidarCadastro("Chá - Aut");
+            VC.ValidaCadastro("Chá - Aut");
             Menu.Inicio();
         }
 

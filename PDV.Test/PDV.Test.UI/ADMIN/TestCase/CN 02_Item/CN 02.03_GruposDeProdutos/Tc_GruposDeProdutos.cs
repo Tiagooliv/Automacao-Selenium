@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using PDV.Test.UI._1._CommonMethods;
 using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
@@ -15,10 +16,13 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
     public class Tc_GruposDeProdutos
 
     {
-        private HomePageTHExPOS HP;
-        private PoLogin_PDV LG;
-        private Po_Menus Menu;
-        private Po_GruposDeProdutos Gr;
+        #region Fields
+        HomePageTHExPOS HP;
+        PoLogin_PDV LG;
+        Po_Menus Menu;
+        Po_GruposDeProdutos Gr;
+        ValidarCadastro VC;
+        #endregion
 
         public Tc_GruposDeProdutos()
         {
@@ -27,6 +31,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
             LG = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
             Gr = new Po_GruposDeProdutos(driver);
+            VC = new ValidarCadastro(driver);
         }
 
         [TestMethod]
@@ -37,10 +42,10 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
             LG.Admin();
             Menu.GruposDeProdutos();
             Gr.BtnAdicionarGrupo();
-            Gr.DadosdoGrupo("Sobremesas - Aut", "Bebidas");
+            Gr.DadosdoGrupo("Sobremesas - Aut", "Outros");
             Gr.IconeGrupo();
             Gr.BtnSalvar();
-            Gr.ValidarCadastro("Sobremesas - Aut");
+            VC.ValidaCadastro("Sobremesas - Aut");
             Menu.Inicio();
 
         }
