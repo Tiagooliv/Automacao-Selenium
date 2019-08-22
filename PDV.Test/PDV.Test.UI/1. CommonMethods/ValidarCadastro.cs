@@ -17,12 +17,28 @@ namespace PDV.Test.UI._1._CommonMethods
 
         public void ValidaCadastro(string Text)
         {
-            driver.FindElement(By.ClassName("thf-input-icon-left")).SendKeys(Text);  //Pesquisa o novo cadastro            
-            var Textresult = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;  //Guarda o primeiro resultado da lista
-
-            if (Textresult != Text)
+            //Pesquisa o novo cadastro 
+            driver.FindElement(By.ClassName("thf-input-icon-left")).SendKeys(Text);
+                       
+            try
             {
-                Assert.Fail("Falha no cadastro, " + Text + "   NÃO ENCONTRADO.");
+                //Valida resultado
+                var Textresult = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;
+                Assert.AreEqual(Text, Textresult);
+            }
+            catch (AssertFailedException) //Resultado <> da busca
+            {
+                Assert.Fail(Text + " NÃO ENCONTRADO.");
+            }
+            catch //Resultado vazio
+            {
+                var x = driver.FindElement(By.XPath("//ni-collapsible-widget/div/div[2]/div/ni-empty-content/h3")).Text;
+
+                if (x != null)
+                {
+                    Assert.Fail("Falha no cadastro, " + Text + "   NÃO ENCONTRADO.");
+                }
+
             }
 
             Sw.SwitchAtivo(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div"), "Class",
