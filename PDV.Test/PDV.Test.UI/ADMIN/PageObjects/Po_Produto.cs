@@ -92,6 +92,50 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
         }
 
+        public void BtnEditar()
+        {
+            driver.FindElement(By.XPath("//div/div/div/div/div/table/tbody/tr/td[7]/span")).Click();
+
+            driver.FindElement(By.XPath("//div/div/div/div/div/thf-popup/div/div[2]")).Click();
+
+        }
+
+        public void EditarProduto(string NomeProduto, string CodInterno, string GrupoProduto, string UnidMedida, string PrUnitario)
+        {
+            var nomeproduto = driver.FindElement(By.XPath("//thf-field-container/div/div[2]/input"));
+            nomeproduto.Clear();
+            nomeproduto.SendKeys(NomeProduto);
+
+            var codinterno = driver.FindElement(By.XPath("//div/div[2]/div/div[1]/thf-input[2]/thf-field-container/div/div[2]/input"));
+            codinterno.Clear();
+            codinterno.SendKeys(CodInterno);
+            codinterno.SendKeys(Keys.Tab);
+
+            var grupo = driver.FindElement(By.XPath("//div/div[1]/thf-multiselect/thf-field-container/div/div[2]/input"));
+            grupo.Clear();
+            grupo.Click();
+            grupo.SendKeys(Keys.ArrowDown);
+            Thread.Sleep(500);
+
+            var grupoproduto = driver.FindElement(By.XPath("//div/thf-multiselect-search/div/input"));
+            grupoproduto.Clear();
+            grupoproduto.SendKeys(GrupoProduto);
+            driver.FindElement(By.XPath("//div/thf-multiselect-dropdown/div/ul/thf-multiselect-item/li/a")).Click();
+            grupoproduto.SendKeys(Keys.Tab);
+
+            //Select.ByText(By.ClassName("thf-select"),UnidMedida);
+            var unimedida = driver.FindElement(By.XPath("//div/div[1]/thf-select/thf-field-container/div/select"));
+            unimedida.Clear();
+            unimedida.SendKeys(Keys.ArrowDown);
+            unimedida.SendKeys(Keys.ArrowDown);
+            unimedida.SendKeys(UnidMedida);
+            unimedida.SendKeys(Keys.Enter);
+
+            var prUnitario = driver.FindElement(By.XPath("//thf-decimal/thf-field-container/div/div[2]/input"));
+            prUnitario.Clear();
+            prUnitario.SendKeys(PrUnitario);
+        }
+
         #region Validação antiga
         //public void ValidarCadastro(string NomeProduto)
         //{
