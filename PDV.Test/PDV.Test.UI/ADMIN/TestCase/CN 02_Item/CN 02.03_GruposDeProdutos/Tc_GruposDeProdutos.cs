@@ -20,8 +20,8 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
         HomePageTHExPOS HP;
         PoLogin_PDV LG;
         Po_Menus Menu;
-        Po_GruposDeProdutos Gr;
-        ValidarCadastro VC;
+        IntGrupoDeProdutos Gp;
+        ValidarCadastro Vc;
         #endregion
 
         public Tc_GruposDeProdutos()
@@ -30,8 +30,8 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
             HP = new HomePageTHExPOS(driver);
             LG = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
-            Gr = new Po_GruposDeProdutos(driver);
-            VC = new ValidarCadastro(driver);
+            Gp = new IntGrupoDeProdutos(driver);
+            Vc = new ValidarCadastro(driver);
         }
 
         [TestMethod]
@@ -41,11 +41,11 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
             HP.AdminTST();
             LG.Admin();
             Menu.GruposDeProdutos();
-            Gr.BtnAdicionarGrupo();
-            Gr.DadosdoGrupo("Sobremesas - Aut", "Outros");
-            Gr.IconeGrupo();
-            Gr.BtnSalvar();
-            VC.ValidaCadastro("Sobremesas - Aut");
+            Gp.BtnAdicionarGrupo();
+            Gp.DadosdoGrupo("Sobremesas - Aut", "Outros");
+            Gp.IconeGrupo();
+            Gp.BtnSalvar();
+            Vc.ValidaCadastro("Sobremesas - Aut");
             Menu.Inicio();
 
         }
