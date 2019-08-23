@@ -44,6 +44,9 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
             Pr.Fiscais();
             Pr.BtnSalvar();
             VC.ValidaCadastro("Torta de limão - Aut");
+            Pr.BtnEditar();
+            Pr.EditarProduto("Torta de limão_E - Aut", "003", "Sobremesas - Aut", "KG - Quilo", "5,50");
+            Pr.BtnSalvar();
             Menu.Inicio();
         }
     }
