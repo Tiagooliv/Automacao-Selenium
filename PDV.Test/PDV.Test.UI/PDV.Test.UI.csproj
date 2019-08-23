@@ -81,6 +81,7 @@
     <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.02_Modificadores\Tc_Modificadores.cs" />
     <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.03_GruposDeProdutos\Tc_GruposDeProdutos.cs" />
     <Compile Include="ADMIN\TestCase\CN 03_PontoDeVenda\CN 03.01_PDV\Tc_PDV.cs" />
+    <Compile Include="Interactions\IntGrupoDeProduto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="0. Login\TcLogin.cs" />
   </ItemGroup>
