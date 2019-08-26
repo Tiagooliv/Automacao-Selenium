@@ -34,7 +34,8 @@ namespace PDV.Test.UI.PageObjects.PDV
             
 
             driver.FindElement(By.XPath("//div/div[2]/input")).SendKeys("sqa");
-            driver.FindElement(By.ClassName("initials-header")).Click();          
+            driver.FindElement(By.ClassName("initials-header")).Click();
+            Thread.Sleep(2000);
             
         }
 
