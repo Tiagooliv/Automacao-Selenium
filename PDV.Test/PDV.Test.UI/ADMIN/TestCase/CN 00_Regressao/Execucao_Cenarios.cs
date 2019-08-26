@@ -5,6 +5,7 @@ using PDV.Test.UI._1._CommonMethods;
 using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
+using PDV.Test.UI.Interactions;
 using PDV.Test.UI.PageObjects.PDV;
 
 
@@ -19,7 +20,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
         Po_Menus Menu;
         IntGrupoDeProdutos Gp;
         Po_Modificadores Mod;
-        Po_Produto Pr;
+        IntProduto Pr;
         Po_PDV PDV;
         ValidarCadastro Vc;
         #endregion
@@ -32,7 +33,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             Menu = new Po_Menus(driver);
             Gp = new IntGrupoDeProdutos(driver);
             Mod = new Po_Modificadores(driver);
-            Pr = new Po_Produto(driver);
+            Pr = new IntProduto(driver);
             PDV = new Po_PDV(driver);
             Vc = new ValidarCadastro(driver);
         }
