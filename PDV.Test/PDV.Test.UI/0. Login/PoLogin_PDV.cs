@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using PDV.Test.UI.CommonMethods.Utils;
@@ -27,13 +26,22 @@ namespace PDV.Test.UI.PageObjects.PDV
             email.Clear();
             email.SendKeys("cm@totvs.com.br");
             Wait.LocateElementAndClick(By.XPath("//thf-container/div/div/form/div/thf-button/button"));
+            Thread.Sleep(5000);
 
+            Wait.LocateElement(By.ClassName("thf-page-header-title"));
+            var title = driver.FindElement(By.ClassName("thf-page-header-title")).Text;
+            Assert.AreEqual("Estabelecimentos", title);
+            
+
+            driver.FindElement(By.XPath("//div/div[2]/input")).SendKeys("sqa");
+            driver.FindElement(By.ClassName("initials-header")).Click();
+            Thread.Sleep(2000);
+            
         }
 
         public void POS()
         {
             Wait.LocateElementAndClick(By.XPath("//thf-container/div/div/form/div/thf-button/button"));
-
             Thread.Sleep(10000);
         }
 

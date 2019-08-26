@@ -15,7 +15,7 @@ namespace PDV.Test.UI.CommonMethods.Utils
         public void PosTST()
         {
             driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl("https://tst.thexpos.net/auth/");            
+            driver.Navigate().GoToUrl("https://tst.thexpos.net/auth/login");            
                                              
             var title =  driver.Title;
             Assert.AreEqual("TOTVS PDV Food", title);
@@ -24,7 +24,7 @@ namespace PDV.Test.UI.CommonMethods.Utils
         public void AdminTST()
         {
             driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl("https://admin-tst.thexpos.net/");            
+            driver.Navigate().GoToUrl("https://admin-tst.thexpos.net/auth/login");            
             
             var title = driver.Title;
             Assert.AreEqual("Admin", title);
