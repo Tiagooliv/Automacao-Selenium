@@ -6,6 +6,7 @@ using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
 using PDV.Test.UI.PageObjects.PDV;
+using PDV.Test.UI.Interactions;
 using System;
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
@@ -18,8 +19,8 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
         HomePageTHExPOS Url;
         PoLogin_PDV Login;
         Po_Menus Menu;
-        Po_Produto Pr;
         ValidarCadastro VC;
+        IntProduto Ip;
         #endregion
 
         public TC_Produtos()
@@ -28,8 +29,9 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
             Url = new HomePageTHExPOS(driver);
             Login = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
-            Pr = new Po_Produto(driver);
+            Ip = new IntProduto(driver);
             VC = new ValidarCadastro(driver);
+
         }
 
         [TestMethod]
@@ -38,15 +40,15 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
             Url.AdminTST();
             Login.Admin();
             Menu.Produtos();
-            Pr.BtnAdicionarProduto();
-            Pr.DadosProduto("Torta de limão - Aut", "002", "Sobremesas - Aut", "KG - Quilo", "4,50");
-            Pr.Detalhes("Chá - Aut");
-            Pr.Fiscais();
-            Pr.BtnSalvar();
+            Ip.BtnAdicionarProduto();
+            Ip.DadosProduto("Torta de limão - Aut", "002", "Sobremesas - Aut", "KG - Quilo", "4,50");
+            Ip.Detalhes("Chá - Aut");
+            Ip.Fiscais();
+            Ip.BtnSalvar();
             VC.ValidaCadastro("Torta de limão - Aut");
-            Pr.BtnEditar();
-            Pr.EditarProduto("Torta de limão_E - Aut", "003", "Sobremesas - Aut", "KG - Quilo", "5,50");
-            Pr.BtnSalvar();
+            Ip.BtnEditar();
+            Ip.EditarProduto("Torta de limão_E - Aut", "003", "Sobremesas - Aut", "KG - Quilo", "5,50");
+            Ip.BtnSalvar();
             Menu.Inicio();
         }
     }

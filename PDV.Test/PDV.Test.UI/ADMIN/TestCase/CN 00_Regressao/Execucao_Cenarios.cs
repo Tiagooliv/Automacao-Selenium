@@ -6,12 +6,12 @@ using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
 using PDV.Test.UI.PageObjects.PDV;
-
+using PDV.Test.UI.Interactions;
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
 {
     [TestClass]
-    public class Execucao_Cenarios
+    public class Execucao_Cenarios 
     {
         #region Fields
         HomePageTHExPOS HP;
@@ -19,7 +19,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
         Po_Menus Menu;
         Po_GruposDeProdutos Gr;
         Po_Modificadores Mod;
-        Po_Produto Pr;
+        IntProduto Ip;
         Po_PDV PDV;
         ValidarCadastro VC;
         #endregion
@@ -32,7 +32,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             Menu = new Po_Menus(driver);
             Gr = new Po_GruposDeProdutos(driver);
             Mod = new Po_Modificadores(driver);
-            Pr = new Po_Produto(driver);
+            Ip = new IntProduto(driver);
             PDV = new Po_PDV(driver);
             VC = new ValidarCadastro(driver);
         }
@@ -64,11 +64,11 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             //Produtos
 
             Menu.Produtos();
-            Pr.BtnAdicionarProduto();
-            Pr.DadosProduto("Torta de limão - Aut", "002", "Sobremesas - Aut", "KG - Quilo", "4,50");
-            Pr.Detalhes("Chá - Aut");
-            Pr.Fiscais();
-            Pr.BtnSalvar();
+            Ip.BtnAdicionarProduto();
+            Ip.DadosProduto("Torta de limão - Aut", "002", "Sobremesas - Aut", "KG - Quilo", "4,50");
+            Ip.Detalhes("Chá - Aut");
+            Ip.Fiscais();
+            Ip.BtnSalvar();
             VC.ValidaCadastro("Torta de limão - Aut");
 
             //PDV
