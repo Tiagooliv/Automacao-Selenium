@@ -19,9 +19,9 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
         PoLogin_PDV LG;
         Po_Menus Menu;
         IntGrupoDeProdutos Gp;
-        Po_Modificadores Mod;
+        IntModificadores Mod;
         IntProduto Pr;
-        Po_PDV PDV;
+        IntPDV PDV;
         ValidarCadastro Vc;
         #endregion
 
@@ -32,9 +32,9 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             LG = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
             Gp = new IntGrupoDeProdutos(driver);
-            Mod = new Po_Modificadores(driver);
+            Mod = new IntModificadores(driver);
             Pr = new IntProduto(driver);
-            PDV = new Po_PDV(driver);
+            PDV = new IntPDV(driver);
             Vc = new ValidarCadastro(driver);
         }
 

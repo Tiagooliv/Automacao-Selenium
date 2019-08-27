@@ -18,7 +18,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
         HomePageTHExPOS HP;
         PoLogin_PDV LG;
         Po_Menus Menu;
-        Po_Modificadores Mod;
+        IntModificadores Mod;
         ValidarCadastro VC;
         #endregion
         public Tc_Modificadores()
@@ -27,7 +27,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
             HP = new HomePageTHExPOS(driver);
             LG = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
-            Mod = new Po_Modificadores(driver);
+            Mod = new IntModificadores(driver);
             VC = new ValidarCadastro(driver);
         }                    
 
