@@ -1,11 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using PDV.Test.UI._1._CommonMethods;
-using PDV.Test.UI.POS.CommonMethods;
-using System.Threading;
-
-namespace PDV.Test.UI.ADMIN.PageObjects
+﻿
+namespace PDV.Test.UI._2._Interactions
 {
     public class IntGruposDeProdutos
     {

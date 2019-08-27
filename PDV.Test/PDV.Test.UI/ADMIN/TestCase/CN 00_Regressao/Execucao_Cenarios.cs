@@ -5,9 +5,8 @@ using PDV.Test.UI._1._CommonMethods;
 using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
-using PDV.Test.UI.PageObjects.PDV;
 using PDV.Test.UI.Interactions;
-
+using PDV.Test.UI.PageObjects.PDV;
 
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
@@ -20,9 +19,9 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
         PoLogin_PDV LG;
         Po_Menus Menu;
         IntGrupoDeProdutos Gp;
-        Po_Modificadores Mod;
-        IntProduto Ip;
-        Po_PDV PDV;
+        IntModificadores Mod;
+        IntProduto Pr;
+        IntPDV PDV;
         ValidarCadastro Vc;
         #endregion
 
@@ -33,9 +32,9 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             LG = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
             Gp = new IntGrupoDeProdutos(driver);
-            Mod = new Po_Modificadores(driver);
-            Ip = new IntProduto(driver);
-            PDV = new Po_PDV(driver);
+            Mod = new IntModificadores(driver);
+            Pr = new IntProduto(driver);
+            PDV = new IntPDV(driver);
             Vc = new ValidarCadastro(driver);
         }
 
@@ -66,15 +65,12 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             //Produtos
 
             Menu.Produtos();
-            Ip.BtnAdicionarProduto();
-            Ip.DadosProduto("Torta de limão - Aut", "002", "Sobremesas - Aut", "KG - Quilo", "4,50");
-            Ip.Detalhes("Chá - Aut");
-            Ip.Fiscais();
-            Ip.BtnSalvar();
+            Pr.BtnAdicionarProduto();
+            Pr.DadosProduto("Torta de limão - Aut", "002", "Sobremesas - Aut", "KG - Quilo", "4,50");
+            Pr.Detalhes("Chá - Aut");
+            Pr.Fiscais();
+            Pr.BtnSalvar();
             Vc.ValidaCadastro("Torta de limão - Aut");
-            Ip.BtnEditar();
-            Ip.EditarProduto("Torta de limão_E - Aut", "003", "Sobremesas - Aut", "KG - Quilo", "5,50");
-            Ip.BtnSalvar();
 
             //PDV
 

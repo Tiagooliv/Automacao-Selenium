@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using PDV.Test.UI._1._CommonMethods;
+using PDV.Test.UI._2._Interactions;
 using PDV.Test.UI.POS.CommonMethods;
 using System.Threading;
 

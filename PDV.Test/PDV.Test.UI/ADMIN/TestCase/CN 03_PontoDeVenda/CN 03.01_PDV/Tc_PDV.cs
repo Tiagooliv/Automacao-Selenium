@@ -6,6 +6,7 @@ using PDV.Test.UI._1._CommonMethods;
 using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
+using PDV.Test.UI.Interactions;
 using PDV.Test.UI.PageObjects.PDV;
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_03_PontoDeVenda.CN_03._01_PDV
@@ -16,8 +17,8 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_03_PontoDeVenda.CN_03._01_PDV
         private HomePageTHExPOS HP;
         private PoLogin_PDV LG;
         private Po_Menus Menu;
-        private Po_PDV PDV;
-        private ValidarCadastro VR;
+        private IntPDV PDV;
+        private ValidarCadastro VC;
 
         public Tc_PDV()
         {
@@ -25,8 +26,8 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_03_PontoDeVenda.CN_03._01_PDV
             HP = new HomePageTHExPOS(driver);
             LG = new PoLogin_PDV(driver);
             Menu = new Po_Menus(driver);
-            PDV = new Po_PDV(driver);
-            VR = new ValidarCadastro(driver);
+            PDV = new IntPDV(driver);
+            VC = new ValidarCadastro(driver);
         }
 
         [TestMethod]
@@ -40,7 +41,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_03_PontoDeVenda.CN_03._01_PDV
             PDV.TaxaServico("7", "10", "13");
             PDV.AssociarItens("Churrasco");
             PDV.BtnSalvar();
-            VR.ValidaCadastro("PDV - Aut");
+            VC.ValidaCadastro("PDV - Aut");
             Menu.Inicio();
             
         }
