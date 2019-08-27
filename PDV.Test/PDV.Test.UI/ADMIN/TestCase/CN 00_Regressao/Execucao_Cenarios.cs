@@ -6,6 +6,8 @@ using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
 using PDV.Test.UI.PageObjects.PDV;
+using PDV.Test.UI.Interactions;
+
 
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
@@ -19,7 +21,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
         Po_Menus Menu;
         IntGrupoDeProdutos Gp;
         Po_Modificadores Mod;
-        Po_Produto Pr;
+        IntProduto Ip;
         Po_PDV PDV;
         ValidarCadastro Vc;
         #endregion
@@ -32,7 +34,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             Menu = new Po_Menus(driver);
             Gp = new IntGrupoDeProdutos(driver);
             Mod = new Po_Modificadores(driver);
-            Pr = new Po_Produto(driver);
+            Ip = new IntProduto(driver);
             PDV = new Po_PDV(driver);
             Vc = new ValidarCadastro(driver);
         }
@@ -64,12 +66,15 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             //Produtos
 
             Menu.Produtos();
-            Pr.BtnAdicionarProduto();
-            Pr.DadosProduto("Torta de limão - Aut", "002", "Sobremesas - Aut", "KG - Quilo", "4,50");
-            Pr.Detalhes("Chá - Aut");
-            Pr.Fiscais();
-            Pr.BtnSalvar();
+            Ip.BtnAdicionarProduto();
+            Ip.DadosProduto("Torta de limão - Aut", "002", "Sobremesas - Aut", "KG - Quilo", "4,50");
+            Ip.Detalhes("Chá - Aut");
+            Ip.Fiscais();
+            Ip.BtnSalvar();
             Vc.ValidaCadastro("Torta de limão - Aut");
+            Ip.BtnEditar();
+            Ip.EditarProduto("Torta de limão_E - Aut", "003", "Sobremesas - Aut", "KG - Quilo", "5,50");
+            Ip.BtnSalvar();
 
             //PDV
 

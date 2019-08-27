@@ -31,59 +31,46 @@ namespace PDV.Test.UI.Interactions
 
         public void DadosProduto(string NomeProduto, string CodInterno, string GrupoProduto, string UnidMedida, string PrUnitario)
         {
-            var txtProduto = driver.FindElement(By.ClassName(nomeproduto));
-            txtProduto.SendKeys(NomeProduto);
+            driver.FindElement(By.ClassName(nomeproduto)).SendKeys(NomeProduto);
+           
+            driver.FindElement(By.XPath(codinterno)).SendKeys(CodInterno);
+            driver.FindElement(By.XPath(codinterno)).SendKeys(Keys.Tab);
 
-            var txtcodinterno = driver.FindElement(By.XPath(codinterno));
-            txtcodinterno.SendKeys(CodInterno);
-            txtcodinterno.SendKeys(Keys.Tab);
-
-            var txtgrupo = driver.FindElement(By.XPath(grupo));
-            txtgrupo.Click();
-            txtgrupo.SendKeys(Keys.ArrowDown);
+            driver.FindElement(By.XPath(grupo)).Click();
+            driver.FindElement(By.XPath(grupo)).SendKeys(Keys.ArrowDown);
             Thread.Sleep(500);
 
-            var txtgrupoproduto = driver.FindElement(By.XPath(grupoproduto));
-            txtgrupoproduto.SendKeys(GrupoProduto);
-            var cliquegrupo = driver.FindElement(By.XPath(Clickgrupoproduto));
-            cliquegrupo.Click();
-            txtgrupoproduto.SendKeys(Keys.Tab);
+            driver.FindElement(By.XPath(grupoproduto)).SendKeys(GrupoProduto);
+            driver.FindElement(By.XPath(Clickgrupoproduto)).Click();
+            driver.FindElement(By.XPath(grupoproduto)).SendKeys(Keys.Tab);
 
             //Select.ByText(By.ClassName("thf-select"),UnidMedida);
-            var txtunimedida = driver.FindElement(By.XPath(unimedida));
-            txtunimedida.SendKeys(Keys.ArrowDown);
-            txtunimedida.SendKeys(Keys.ArrowDown);
-            txtunimedida.SendKeys(UnidMedida);
-            txtunimedida.SendKeys(Keys.Enter);
+            driver.FindElement(By.XPath(unimedida)).SendKeys(Keys.ArrowDown);
+            driver.FindElement(By.XPath(unimedida)).SendKeys(Keys.ArrowDown);
+            driver.FindElement(By.XPath(unimedida)).SendKeys(UnidMedida);
+            driver.FindElement(By.XPath(unimedida)).SendKeys(Keys.Enter);
 
-            var txtprUnitario = driver.FindElement(By.XPath(PrUnitario));
-            txtprUnitario.SendKeys(PrUnitario);
+            driver.FindElement(By.XPath(prUnitario)).SendKeys(PrUnitario);
         }
 
         public void Detalhes(string Modificadores)
         {
-            var CliqueModificadores = driver.FindElement(By.XPath(cliquemodificadores));
+            driver.FindElement(By.XPath(cliquemodificadores)).Click();
 
-            CliqueModificadores.Click();
+            driver.FindElement(By.XPath(modificadores)).SendKeys(Modificadores);
 
-            var txtmodificadores = driver.FindElement(By.XPath(modificadores));
+            driver.FindElement(By.XPath(cliquemodifdetalhes)).Click();
 
-            txtmodificadores.SendKeys(Modificadores);
+            driver.FindElement(By.XPath(modificadores)).SendKeys(Keys.Tab);
 
-            var CliqueModifiDetalhes = driver.FindElement(By.XPath(cliquemodifdetalhes));
-
-            CliqueModifiDetalhes.Click();
-
-            txtmodificadores.SendKeys(Keys.Tab);
         }
 
         public void Fiscais()
         {
-            var CliqueFiscais = driver.FindElement(By.XPath(cliquefiscais));
+            driver.FindElement(By.XPath(cliquefiscais)).Click();
 
-            CliqueFiscais.Click();
-
-            CliqueFiscais.Click();
+            driver.FindElement(By.XPath(cliquefiscaisSelect)).Click();
+            
         }
 
         public void BtnSalvar()
@@ -92,8 +79,8 @@ namespace PDV.Test.UI.Interactions
             Wait.LocateElement(By.XPath(msg)); //Aguarda mensagem na tela
 
             // Valida a mensagem  
-            var Msg = driver.FindElement(By.XPath(msg)).Text;
-            Assert.AreEqual("Produto cadastrado com sucesso.", Msg);
+            driver.FindElement(By.XPath(msg)).Text.ToString();
+            Assert.AreEqual("Produto cadastrado com sucesso.", msg);
             Thread.Sleep(3000);
             driver.FindElement(By.XPath(msg)).Click();
 
@@ -109,39 +96,32 @@ namespace PDV.Test.UI.Interactions
 
         public void EditarProduto(string NomeProduto, string CodInterno, string GrupoProduto, string UnidMedida, string PrUnitario)
         {
-            var txtnomeproduto = driver.FindElement(By.XPath(nomeproduto));
-            txtnomeproduto.Clear();
-            txtnomeproduto.SendKeys(NomeProduto);
+            driver.FindElement(By.XPath(nomeproduto)).Clear();
+            driver.FindElement(By.XPath(nomeproduto)).SendKeys(NomeProduto);
 
-            var txtcodinterno = driver.FindElement(By.XPath(codinterno));
-            txtcodinterno.Clear();
-            txtcodinterno.SendKeys(CodInterno);
-            txtcodinterno.SendKeys(Keys.Tab);
+            driver.FindElement(By.XPath(codinterno)).Clear();
+            driver.FindElement(By.XPath(codinterno)).SendKeys(CodInterno);
+            driver.FindElement(By.XPath(codinterno)).SendKeys(Keys.Tab);
 
-            var txtgrupo = driver.FindElement(By.XPath(grupo));
-            txtgrupo.Clear();
-            txtgrupo.Click();
-            txtgrupo.SendKeys(Keys.ArrowDown);
+            driver.FindElement(By.XPath(grupo)).Clear();
+            driver.FindElement(By.XPath(grupo)).Click();
+            driver.FindElement(By.XPath(grupo)).SendKeys(Keys.ArrowDown);
             Thread.Sleep(500);
 
-            var txtgrupoproduto = driver.FindElement(By.XPath(grupoproduto));
-            txtgrupoproduto.Clear();
-            txtgrupoproduto.SendKeys(GrupoProduto);
-            var cliquegrupo = driver.FindElement(By.XPath(Clickgrupoproduto));
-            cliquegrupo.Click();
-            txtgrupoproduto.SendKeys(Keys.Tab);
+            driver.FindElement(By.XPath(grupoproduto)).Clear();
+            driver.FindElement(By.XPath(grupoproduto)).SendKeys(GrupoProduto);
+            driver.FindElement(By.XPath(Clickgrupoproduto)).Click();
+            driver.FindElement(By.XPath(grupoproduto)).SendKeys(Keys.Tab);
 
             //Select.ByText(By.ClassName("thf-select"),UnidMedida);
-            var txtunimedida = driver.FindElement(By.XPath(unimedida));
-            txtunimedida.Clear();
-            txtunimedida.SendKeys(Keys.ArrowDown);
-            txtunimedida.SendKeys(Keys.ArrowDown);
-            txtunimedida.SendKeys(UnidMedida);
-            txtunimedida.SendKeys(Keys.Enter);
+            driver.FindElement(By.XPath(unimedida)).Clear();
+            driver.FindElement(By.XPath(unimedida)).SendKeys(Keys.ArrowDown);
+            driver.FindElement(By.XPath(unimedida)).SendKeys(Keys.ArrowDown);
+            driver.FindElement(By.XPath(unimedida)).SendKeys(UnidMedida);
+            driver.FindElement(By.XPath(unimedida)).SendKeys(Keys.Enter);
 
-            var txtprUnitario = driver.FindElement(By.XPath(PrUnitario));
-            txtprUnitario.Clear();
-            txtprUnitario.SendKeys(PrUnitario);
+            driver.FindElement(By.XPath(PrUnitario)).Clear();
+            driver.FindElement(By.XPath(PrUnitario)).SendKeys(PrUnitario);
         }
 
         #region Validação antiga
