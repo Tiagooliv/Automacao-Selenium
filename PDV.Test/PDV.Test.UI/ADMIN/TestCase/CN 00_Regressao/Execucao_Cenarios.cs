@@ -15,6 +15,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
     public class Execucao_Cenarios
     {
         #region Fields
+
         HomePageTHExPOS HP;
         PoLogin_PDV LG;
         Po_Menus Menu;
@@ -23,6 +24,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
         IntProduto Pr;
         IntPDV PDV;
         ValidarCadastro Vc;
+
         #endregion
 
         public Execucao_Cenarios()

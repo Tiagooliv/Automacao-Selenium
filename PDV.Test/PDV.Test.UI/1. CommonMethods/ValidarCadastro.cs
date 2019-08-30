@@ -15,14 +15,17 @@ namespace PDV.Test.UI._1._CommonMethods
             Sw = new ValidarSwitch(driver);
         }
 
+        public void PesquisaCadastro(string Text)
+        {
+            driver.FindElement(By.ClassName("thf-input-icon-left")).SendKeys(Text);
+        }
+
         public void ValidaCadastro(string Text)
         {
-            //Pesquisa o novo cadastro 
-            driver.FindElement(By.ClassName("thf-input-icon-left")).SendKeys(Text);
-                       
             try
             {
-                //Valida resultado
+                PesquisaCadastro(Text);
+               
                 var Textresult = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;
                 Assert.AreEqual(Text, Textresult);
             }

@@ -14,7 +14,6 @@ namespace PDV.Test.UI._2._Interactions
         public string descricao = "//div[3]/thf-input/thf-field-container/div/div[2]/input";
         public string preco = "//div[5]/thf-decimal/thf-field-container/div/div[2]/input";
         public string btnSalvar = "//thf-button[2]/button/span";
-        public string Msg = "/html/body/thf-toaster/div/div";
-        
+                
     }
 }
