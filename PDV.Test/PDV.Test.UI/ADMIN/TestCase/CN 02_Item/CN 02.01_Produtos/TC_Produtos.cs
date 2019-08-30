@@ -47,8 +47,11 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
             Ip.BtnSalvar();
             VC.ValidaCadastro("Torta de limão - Aut");
             Ip.BtnEditar();
-            Ip.EditarProduto("Torta de limão_E - Aut", "003", "Sobremesas - Aut", "KG - Quilo", "5,50");
+            Ip.EditarProduto("Torta de limão_E - Aut", "003");
             Ip.BtnSalvar();
+            VC.ValidaCadastro("Torta de limão_E - Aut");
+            Ip.DuplicarProduto();
+            VC.ValidaCadastro("Torta de limão_E - Aut - Copy");
             Menu.Inicio();
         }
     }
