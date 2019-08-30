@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="1. CommonMethods\SelectElement.cs" />
     <Compile Include="1. CommonMethods\ValidarCadastro.cs" />
+    <Compile Include="1. CommonMethods\ValidarMsg.cs" />
     <Compile Include="1. CommonMethods\ValidarSwitch.cs" />
     <Compile Include="1. CommonMethods\HomePageTHExPOS.cs" />
     <Compile Include="1. CommonMethods\TestLocalTools.cs" />

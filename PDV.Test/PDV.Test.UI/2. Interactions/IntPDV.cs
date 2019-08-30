@@ -13,12 +13,14 @@ namespace PDV.Test.UI.Interactions
         IWebDriver driver;
         WaitElement Wait;
         Select_Element Select;
-        
+        ValidarMsg Msg;
+
         public IntPDV(IWebDriver driver)
         {
             this.driver = driver;
             Wait = new WaitElement(driver);
-            Select = new Select_Element(driver);            
+            Select = new Select_Element(driver);
+            Msg = new ValidarMsg(driver);
         }
 
         public void BtnAdicionarPDV()
@@ -87,18 +89,8 @@ namespace PDV.Test.UI.Interactions
 
         public void BtnSalvar()
         {
-            //Salvar
             driver.FindElement(By.ClassName(btnsalvar)).Click();
-
-            //Mensagem na tela "Cadastro com sucesso"
-            Wait.LocateElement(By.XPath(Msg));
-
-            // Valida a mensagem
-            var msg = driver.FindElement(By.XPath(Msg)).Text;             
-            Assert.AreEqual("Ponto de venda cadastrado com sucesso.", msg);
-
-            Thread.Sleep(3000);
-            driver.FindElement(By.XPath(Msg)).Click();
+            Msg.ValidaMsg("Ponto de venda cadastrado com sucesso.");
 
         }
 

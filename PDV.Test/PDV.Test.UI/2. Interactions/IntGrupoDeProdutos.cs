@@ -11,18 +11,16 @@ namespace PDV.Test.UI.ADMIN.PageObjects
     public class IntGrupoDeProdutos : IntGruposDeProdutos
     {
         public IWebDriver driver;
-        WaitElement Wait;
-        ValidarSwitch Sw;
-        ValidarCadastro Vc;
+        WaitElement Wait;        
+        ValidarMsg Msg;
         Select_Element Select;
 
         public IntGrupoDeProdutos(IWebDriver driver)
         {
             this.driver = driver;
-            Wait = new WaitElement(driver);
-            Sw = new ValidarSwitch(driver);
-            Vc = new ValidarCadastro(driver);
+            Wait = new WaitElement(driver);           
             Select = new Select_Element(driver);
+            Msg = new ValidarMsg(driver);
         }
 
         public void BtnAdicionarGrupo()
@@ -31,34 +29,23 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         }
 
         public void DadosdoGrupo(string NomeGrupo, string GrupoFixo)
-        {            
+        {
             Wait.LocateElement(By.ClassName(TituloModal));//Titulo Modal
             driver.FindElement(By.XPath(nomeGrupo)).SendKeys(NomeGrupo);
             Select.ByText(By.ClassName(grupoFixo), GrupoFixo);
         }
 
         public void IconeGrupo()
-        {        
+        {
             driver.FindElement(By.XPath(IconeSobremesa)).Click();
         }
 
         public void BtnSalvar()
         {
-            //Salvar
             driver.FindElement(By.XPath(btnSalvar)).Click();
-
-            //Aguarda mensagem na tela "Cadastro com sucesso"
-            Wait.LocateElement(By.XPath(Msg));
-
-            //Guarda mensagem
-            var msg = driver.FindElement(By.XPath(Msg)).Text;
-
-            // Valida a mensagem 
-            Assert.AreEqual("Grupo criado com sucesso", msg);
-            Thread.Sleep(3000);
-            driver.FindElement(By.XPath(Msg)).Click();
+            Msg.ValidaMsg("Grupo criado com sucesso");
         }
-        
+
         #region Antiga validação
         //public void ValidarCadastro(string NomeGrupo)
         //{
@@ -85,7 +72,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
         public void Editar()
         {
-            driver.FindElement(By.XPath(nomeGrupo)).Clear();            
+            driver.FindElement(By.XPath(nomeGrupo)).Clear();
         }
 
 

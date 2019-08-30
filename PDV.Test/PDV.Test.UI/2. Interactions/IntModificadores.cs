@@ -14,15 +14,15 @@ namespace PDV.Test.UI.ADMIN.PageObjects
     {
         private IWebDriver driver;
         WaitElement Wait;
-        ValidarSwitch Sw;
         Select_Element Select;
+        ValidarMsg Msg;
 
         public IntModificadores(IWebDriver driver)
         {
             this.driver = driver;
             Wait = new WaitElement(driver);
-            Sw = new ValidarSwitch(driver);
             Select = new Select_Element(driver);
+            Msg = new ValidarMsg(driver);
         }
 
         public void BtnAdicionarModificador()
@@ -31,7 +31,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             Wait.LocateElementAndClick(By.XPath(btnAdicionarMod));
 
             var text = driver.FindElement(By.ClassName(TituloModal)).Text;
-            Assert.AreEqual("Novo modificador",text);
+            Assert.AreEqual("Novo modificador", text);
         }
 
         public void DadosDoModificador(string NomeMod, string QtdMin, string QtdMax, string UnMed)
@@ -52,20 +52,13 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             driver.FindElement(By.XPath(descricao)).SendKeys(Keys.Tab);
 
             driver.FindElement(By.XPath(preco)).SendKeys(Preco);
-            
+
         }
 
         public void BtnSalvar()
         {
             driver.FindElement(By.XPath(btnSalvar)).Click();
-            Wait.LocateElement(By.XPath(Msg));//Aguarda mensagem na tela "Cadastro com sucesso"
-
-            // Valida a mensagem 
-            var text = driver.FindElement(By.XPath(Msg)).Text;
-            Assert.AreEqual("Modificador cadastrado com sucesso.", text);
-
-            Thread.Sleep(3000);
-            driver.FindElement(By.XPath(Msg)).Click();
+            Msg.ValidaMsg("Modificador cadastrado com sucesso.");
         }
 
         #region Antiga validação 

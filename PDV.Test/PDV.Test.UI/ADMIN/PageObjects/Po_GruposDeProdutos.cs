@@ -9,7 +9,6 @@ namespace PDV.Test.UI._2._Interactions
         public string grupoFixo = "thf-select";
         public string IconeSobremesa = "//ni-item-card[3]/div/div/div/img";
         public string btnSalvar = "//div[3]/thf-button[2]/button";
-        public string Msg = "/html/body/thf-toaster/div/div";
-                                             
+                                                     
     }
 }
