@@ -24,7 +24,12 @@ namespace PDV.Test.UI.PageObjects.PDV
         {
             var email = driver.FindElement(By.XPath("//div/div[2]/input"));
             email.Clear();
-            email.SendKeys("CM");
+            email.SendKeys("cm@totvs.com.br");
+
+            var senha = driver.FindElement(By.XPath("//div/div[2]/thf-password/thf-field-container/div/div[2]/input"));
+            senha.Clear();
+            senha.SendKeys("5>E&Jg4,");
+
             Wait.LocateElementAndClick(By.XPath("//thf-container/div/div/form/div/thf-button/button"));
             Thread.Sleep(5000);
 
