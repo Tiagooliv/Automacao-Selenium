@@ -11,6 +11,7 @@ namespace PDV.Test.UI._2._Interactions
         public IntCommon(IWebDriver driver)
         {
             this.driver = driver;
+            Wait = new WaitElement(driver);
         }
 
         public void MenuTresPontosList()

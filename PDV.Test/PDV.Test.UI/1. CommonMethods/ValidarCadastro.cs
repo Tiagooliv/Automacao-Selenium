@@ -23,9 +23,7 @@ namespace PDV.Test.UI._1._CommonMethods
         public void ValidaCadastro(string Text)
         {
             try
-            {
-
-         
+            {         
                 PesquisaCadastro(Text);
                
                 var Textresult = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;
