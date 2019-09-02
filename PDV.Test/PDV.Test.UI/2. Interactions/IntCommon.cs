@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.POS.CommonMethods;
+using System.Threading;
 
 namespace PDV.Test.UI._2._Interactions
 {
@@ -16,6 +17,7 @@ namespace PDV.Test.UI._2._Interactions
 
         public void MenuTresPontosList()
         {
+            Thread.Sleep(500);
             Wait.LocateElementAndClick(By.XPath(TresPontosList));
         }
 

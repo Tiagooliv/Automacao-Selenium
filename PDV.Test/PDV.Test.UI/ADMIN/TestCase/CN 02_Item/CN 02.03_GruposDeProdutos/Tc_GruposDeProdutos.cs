@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using PDV.Test.UI._1._CommonMethods;
@@ -12,7 +13,7 @@ using System.Threading;
 namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
 
 {
-    [TestClass]
+    [TestFixture]
     public class Tc_GruposDeProdutos
 
     {
@@ -34,7 +35,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
             Vc = new ValidarCadastro(driver);
         }
 
-        [TestMethod]
+        [Test]
         public void AdicionarGrupo()
 
         {
@@ -45,11 +46,11 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
             Gp.DadosdoGrupo("Sobremesas - Aut", "Outros");
             Gp.IconeGrupo();
             Gp.BtnSalvar("Grupo criado com sucesso");
-            Vc.ValidaCadastro("Sobremesas - Aut");
-            Menu.Inicio();
+            Vc.ValidaCadastro("Sobremesas - Aut");      
 
         }
 
+        [Test]
         public void EditarGrupo()
         {
             Gp.Editar();
