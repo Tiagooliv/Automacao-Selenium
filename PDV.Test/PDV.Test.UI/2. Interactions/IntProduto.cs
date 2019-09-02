@@ -15,6 +15,7 @@ namespace PDV.Test.UI.Interactions
         WaitElement Wait;
         ValidarSwitch Sw;
         Select_Element Select;
+        ValidarMsg Msg;
 
         public IntProduto(IWebDriver driver)
         {
@@ -22,6 +23,8 @@ namespace PDV.Test.UI.Interactions
             Wait = new WaitElement(driver);
             Sw = new ValidarSwitch(driver);
             Select = new Select_Element(driver);
+            Msg = new ValidarMsg(driver);
+           
         }
 
         public void BtnAdicionarProduto()
@@ -73,16 +76,19 @@ namespace PDV.Test.UI.Interactions
             
         }
 
-        public void BtnSalvar()
+        public void BtnSalvar(string BtnMsg)
         {
             driver.FindElement(By.XPath(salvar)).Click();//Salvar
-            Wait.LocateElement(By.XPath(msg)); //Aguarda mensagem na tela
+            //Wait.LocateElement(By.XPath(msg)); //Aguarda mensagem na tela
 
             // Valida a mensagem  
-            var Msg = driver.FindElement(By.XPath(msg)).Text;
-            Assert.AreEqual("Produto cadastrado com sucesso.", Msg);
+            //var Msg = driver.FindElement(By.XPath(msg)).Text;
+            //Assert.AreEqual("Produto cadastrado com sucesso.", Msg);
             //Thread.Sleep(3000);
-            driver.FindElement(By.XPath(msg)).Click();
+            //driver.FindElement(By.XPath(msg)).Click();
+
+            Msg.ValidaMsg(BtnMsg);
+
 
         }
 
@@ -96,19 +102,19 @@ namespace PDV.Test.UI.Interactions
 
         public void EditarProduto(string NomeProduto, string CodInterno)
         {
-            driver.FindElement(By.XPath(nomeproduto)).SendKeys(Keys.Control + "A");
+            Thread.Sleep(3000);
 
-            driver.FindElement(By.XPath(nomeproduto)).SendKeys(NomeProduto);
+            driver.FindElement(By.XPath(nomeproduto)).Clear();
 
-            driver.FindElement(By.XPath(codinterno)).SendKeys(Keys.Control + "A");
+            Thread.Sleep(3000);
 
-            //Thread.Sleep(3000);
+            driver.FindElement(By.XPath(codinterno)).Clear();
 
             //driver.FindElement(By.XPath(nomeproduto)).Clear();
 
-            //driver.FindElement(By.XPath(nomeproduto)).SendKeys(NomeProduto);
+            driver.FindElement(By.XPath(nomeproduto)).SendKeys(NomeProduto);
 
-            //Thread.Sleep(3000);
+            Thread.Sleep(3000);
 
             driver.FindElement(By.XPath(codinterno)).SendKeys(CodInterno);
             driver.FindElement(By.XPath(codinterno)).SendKeys(Keys.Tab);
@@ -123,7 +129,10 @@ namespace PDV.Test.UI.Interactions
             driver.FindElement(By.XPath(duplicar)).Click();
 
             driver.FindElement(By.XPath(confirmar)).Click();
-            
+
+            Msg.ValidaMsg("Produto duplicado com sucesso");
+
+            driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Clear();
         }
 
         #region Validação antiga

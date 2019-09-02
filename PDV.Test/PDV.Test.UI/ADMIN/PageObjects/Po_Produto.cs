@@ -24,7 +24,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public string cliquemodifdetalhes = "//div[2]/div/thf-multiselect/thf-field-container/div/thf-multiselect-dropdown/div/ul/thf-multiselect-item/li/a/label";
         public string cliquefiscais = "//div[4]/ni-collapsible-widget/div/div[2]/div/div/thf-select/thf-field-container/div/div[2]/div/div/span";
         public string salvar = "//div[6]/thf-button[2]/button/span";
-        public string msg = "/html/body/thf-toaster/div";
+        //public string msg = "/html/body/thf-toaster/div";
         public string trespontos = "//div/div/div/div/div/table/tbody/tr/td[7]/span";
         public string editar = "//div/div/div/div/div/thf-popup/div/div[2]";
         public string cliquefiscaisSelect = "//div[4]/ni-collapsible-widget/div/div[2]/div/div/thf-select/thf-field-container/div/div[2]/ul/li/div/span";

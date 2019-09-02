@@ -71,7 +71,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             Pr.DadosProduto("Torta de limão - Aut", "002", "Sobremesas - Aut", "KG - Quilo", "4,50");
             Pr.Detalhes("Chá - Aut");
             Pr.Fiscais();
-            Pr.BtnSalvar();
+            Pr.BtnSalvar("Produto cadastrado com sucesso.");
             Vc.ValidaCadastro("Torta de limão - Aut");
 
             //PDV
