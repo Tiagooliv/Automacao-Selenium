@@ -55,10 +55,10 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
         }
 
-        public void BtnSalvar()
+        public void BtnSalvar(string msg)
         {
             driver.FindElement(By.XPath(btnSalvar)).Click();
-            Msg.ValidaMsg("Modificador cadastrado com sucesso.");
+            Msg.ValidaMsg(msg);
         }
 
         #region Antiga validação 

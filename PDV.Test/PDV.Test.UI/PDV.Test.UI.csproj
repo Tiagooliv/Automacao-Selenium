@@ -72,9 +72,11 @@
     <Compile Include="1. CommonMethods\TestLocalTools.cs" />
     <Compile Include="1. CommonMethods\WaitElement.cs" />
     <Compile Include="0. Login\PoLogin_PDV.cs" />
+    <Compile Include="2. Interactions\IntCommon.cs" />
     <Compile Include="2. Interactions\IntProduto.cs" />
     <Compile Include="2. Interactions\IntModificadores.cs" />
     <Compile Include="2. Interactions\IntPDV.cs" />
+    <Compile Include="ADMIN\PageObjects\Po_Common.cs" />
     <Compile Include="ADMIN\PageObjects\Po_GruposDeProdutos.cs" />
     <Compile Include="ADMIN\PageObjects\Po_Menus.cs" />
     <Compile Include="ADMIN\PageObjects\Po_Modificadores.cs" />

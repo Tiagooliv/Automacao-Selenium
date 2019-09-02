@@ -40,7 +40,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
             Mod.BtnAdicionarModificador();
             Mod.DadosDoModificador("Chá - Aut", "1", "2", "UN - Unidade");
             Mod.Modificador("Chá", "Chá de menta", "5");
-            Mod.BtnSalvar();
+            Mod.BtnSalvar("Modificador cadastrado com sucesso.");
             VC.ValidaCadastro("Chá - Aut");
             Menu.Inicio();
         }

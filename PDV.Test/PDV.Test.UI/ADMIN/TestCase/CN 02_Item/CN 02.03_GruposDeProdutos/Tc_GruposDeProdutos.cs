@@ -44,10 +44,19 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
             Gp.BtnAdicionarGrupo();
             Gp.DadosdoGrupo("Sobremesas - Aut", "Outros");
             Gp.IconeGrupo();
-            Gp.BtnSalvar();
+            Gp.BtnSalvar("Grupo criado com sucesso");
             Vc.ValidaCadastro("Sobremesas - Aut");
             Menu.Inicio();
 
+        }
+
+        public void EditarGrupo()
+        {
+            Gp.Editar();
+            Gp.DadosdoGrupo("Sobremesas - Aut Editado", "Bebidas");
+            Gp.BtnSalvar("Grupo atualizado com sucesso");
+            Vc.ValidaCadastro("Sobremesas - Aut Editado");
+            Menu.Inicio();
         }
 
 

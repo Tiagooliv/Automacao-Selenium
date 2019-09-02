@@ -40,7 +40,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_03_PontoDeVenda.CN_03._01_PDV
             PDV.Dados("PDV - Aut", "cm", "Portugal", "Espanhol");
             PDV.TaxaServico("7", "10", "13");
             PDV.AssociarItens("Churrasco");
-            PDV.BtnSalvar();
+            PDV.BtnSalvar("Ponto de venda cadastrado com sucesso.");
             VC.ValidaCadastro("PDV - Aut");
             Menu.Inicio();
             

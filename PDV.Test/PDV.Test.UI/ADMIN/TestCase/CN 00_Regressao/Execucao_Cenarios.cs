@@ -52,7 +52,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             Gp.BtnAdicionarGrupo();
             Gp.DadosdoGrupo("Sobremesas - Aut", "Bebidas");
             Gp.IconeGrupo();
-            Gp.BtnSalvar();
+            Gp.BtnSalvar("Grupo criado com sucesso");
             Vc.ValidaCadastro("Sobremesas - Aut");
 
             //Modificadores
@@ -61,7 +61,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             Mod.BtnAdicionarModificador();
             Mod.DadosDoModificador("Chá - Aut", "1", "2", "UN - Unidade");
             Mod.Modificador("Chá", "Chá de menta", "5");
-            Mod.BtnSalvar();
+            Mod.BtnSalvar("Modificador cadastrado com sucesso.");
             Vc.ValidaCadastro("Chá - Aut");
 
             //Produtos
@@ -81,7 +81,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             PDV.Dados("PDV - Aut", "cm", "Portugal", "Espanhol");
             PDV.TaxaServico("7", "10", "13");
             PDV.AssociarItens("Torta de limão - Aut");
-            PDV.BtnSalvar();
+            PDV.BtnSalvar("Ponto de venda cadastrado com sucesso.");
             Vc.ValidaCadastro("PDV - Aut");
             Menu.Inicio();
 

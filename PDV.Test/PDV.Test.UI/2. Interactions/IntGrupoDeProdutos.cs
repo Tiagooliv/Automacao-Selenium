@@ -8,12 +8,13 @@ using System.Threading;
 
 namespace PDV.Test.UI.ADMIN.PageObjects
 {
-    public class IntGrupoDeProdutos : IntGruposDeProdutos
+    public class IntGrupoDeProdutos : Po_GruposDeProdutos
     {
         public IWebDriver driver;
         WaitElement Wait;        
         ValidarMsg Msg;
         Select_Element Select;
+        IntCommon intCommon;
 
         public IntGrupoDeProdutos(IWebDriver driver)
         {
@@ -21,6 +22,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             Wait = new WaitElement(driver);           
             Select = new Select_Element(driver);
             Msg = new ValidarMsg(driver);
+            intCommon = new IntCommon(driver);
         }
 
         public void BtnAdicionarGrupo()
@@ -40,10 +42,10 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             driver.FindElement(By.XPath(IconeSobremesa)).Click();
         }
 
-        public void BtnSalvar()
+        public void BtnSalvar(string msg)
         {
             driver.FindElement(By.XPath(btnSalvar)).Click();
-            Msg.ValidaMsg("Grupo criado com sucesso");
+            Msg.ValidaMsg(msg);
         }
 
         #region Antiga validação
@@ -72,7 +74,10 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 
         public void Editar()
         {
+            intCommon.MenuEditarList();
+            Thread.Sleep(1000);
             driver.FindElement(By.XPath(nomeGrupo)).Clear();
+
         }
 
 

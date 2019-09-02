@@ -6,6 +6,7 @@ using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.POS.CommonMethods;
 using System.Threading;
 
+
 namespace PDV.Test.UI.Interactions
 {
     public class IntPDV : Po_PDV
@@ -14,6 +15,8 @@ namespace PDV.Test.UI.Interactions
         WaitElement Wait;
         Select_Element Select;
         ValidarMsg Msg;
+        Po_Common Poc;
+        
 
         public IntPDV(IWebDriver driver)
         {
@@ -21,6 +24,7 @@ namespace PDV.Test.UI.Interactions
             Wait = new WaitElement(driver);
             Select = new Select_Element(driver);
             Msg = new ValidarMsg(driver);
+            Poc = new Po_Common();
         }
 
         public void BtnAdicionarPDV()
@@ -87,11 +91,15 @@ namespace PDV.Test.UI.Interactions
 
         }
 
-        public void BtnSalvar()
+        public void BtnSalvar(string msg)
         {
             driver.FindElement(By.ClassName(btnsalvar)).Click();
-            Msg.ValidaMsg("Ponto de venda cadastrado com sucesso.");
+            Msg.ValidaMsg(msg);
+        }
 
+        public void Editar() 
+        {
+            
         }
 
     }

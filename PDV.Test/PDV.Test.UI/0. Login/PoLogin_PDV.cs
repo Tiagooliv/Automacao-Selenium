@@ -24,7 +24,7 @@ namespace PDV.Test.UI.PageObjects.PDV
         {
             var email = driver.FindElement(By.XPath("//div/div[2]/input"));
             email.Clear();
-            email.SendKeys("cm@totvs.com.br");
+            email.SendKeys("CM");
             Wait.LocateElementAndClick(By.XPath("//thf-container/div/div/form/div/thf-button/button"));
             Thread.Sleep(5000);
 

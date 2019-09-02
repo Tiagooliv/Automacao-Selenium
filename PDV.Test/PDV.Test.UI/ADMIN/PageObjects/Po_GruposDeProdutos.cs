@@ -1,7 +1,7 @@
 ﻿
 namespace PDV.Test.UI._2._Interactions
 {
-    public class IntGruposDeProdutos
+    public class Po_GruposDeProdutos
     {
         public string btnAdicionarGrupo = "thf-button-sm";
         public string TituloModal = "thf-modal-title";
@@ -9,6 +9,6 @@ namespace PDV.Test.UI._2._Interactions
         public string grupoFixo = "thf-select";
         public string IconeSobremesa = "//ni-item-card[3]/div/div/div/img";
         public string btnSalvar = "//div[3]/thf-button[2]/button";
-                                                     
+        
     }
 }
