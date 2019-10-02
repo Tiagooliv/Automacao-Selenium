@@ -46,8 +46,9 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
             Ip.Fiscais();
             Ip.BtnSalvar("Produto cadastrado com sucesso.");
             VC.ValidaCadastro("Torta de limão - Aut");
-            Ip.BtnEditar();
-            Ip.EditarProduto("Torta de limão_E - Aut", "003");
+            //Ip.BtnEditar();
+            //Ip.EditarProduto("Torta de limão_E - Aut", "003");
+            Ip.Editar();
             Ip.BtnSalvar("Produto cadastrado com sucesso.");
             VC.ValidaCadastro("Torta de limão_E - Aut");
             Ip.DuplicarProduto();

@@ -6,6 +6,7 @@ using PDV.Test.UI.POS.CommonMethods;
 using System.Threading;
 using System.Windows;
 using PDV.Test.UI.ADMIN.PageObjects;
+using PDV.Test.UI._2._Interactions;
 
 namespace PDV.Test.UI.Interactions
 {
@@ -16,6 +17,7 @@ namespace PDV.Test.UI.Interactions
         ValidarSwitch Sw;
         Select_Element Select;
         ValidarMsg Msg;
+        IntCommon intCommon;
 
         public IntProduto(IWebDriver driver)
         {
@@ -24,7 +26,8 @@ namespace PDV.Test.UI.Interactions
             Sw = new ValidarSwitch(driver);
             Select = new Select_Element(driver);
             Msg = new ValidarMsg(driver);
-           
+            intCommon = new IntCommon(driver);
+
         }
 
         public void BtnAdicionarProduto()
@@ -92,33 +95,39 @@ namespace PDV.Test.UI.Interactions
 
         }
 
-        public void BtnEditar()
-        {
-            driver.FindElement(By.XPath(trespontos)).Click();
+        //public void BtnEditar()
+        //{
+        //    driver.FindElement(By.XPath(trespontos)).Click();
 
-            driver.FindElement(By.XPath(editar)).Click();
+        //    driver.FindElement(By.XPath(editar)).Click();
 
-        }
+        //}
 
-        public void EditarProduto(string NomeProduto, string CodInterno)
-        {
-            Thread.Sleep(3000);
-
-            driver.FindElement(By.XPath(nomeproduto)).Clear();
-
-            Thread.Sleep(3000);
-
-            driver.FindElement(By.XPath(codinterno)).Clear();
+        //public void EditarProduto(string NomeProduto, string CodInterno)
+        //{
+            //Thread.Sleep(3000);
 
             //driver.FindElement(By.XPath(nomeproduto)).Clear();
 
-            driver.FindElement(By.XPath(nomeproduto)).SendKeys(NomeProduto);
+            //Thread.Sleep(3000);
 
-            Thread.Sleep(3000);
+            //driver.FindElement(By.XPath(codinterno)).Clear();
 
-            driver.FindElement(By.XPath(codinterno)).SendKeys(CodInterno);
-            driver.FindElement(By.XPath(codinterno)).SendKeys(Keys.Tab);
-          
+            //driver.FindElement(By.XPath(nomeproduto)).SendKeys(NomeProduto);
+
+            //Thread.Sleep(3000);
+
+            //driver.FindElement(By.XPath(codinterno)).SendKeys(CodInterno);
+            //driver.FindElement(By.XPath(codinterno)).SendKeys(Keys.Tab);
+      
+
+        //}
+
+        public void Editar()
+        {
+            intCommon.MenuEditarList();
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath(nomeproduto)).Clear();
 
         }
 
