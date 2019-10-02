@@ -75,7 +75,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public void Editar()
         {
             intCommon.MenuEditarList();
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             driver.FindElement(By.XPath(nomeGrupo)).Clear();
 
         }

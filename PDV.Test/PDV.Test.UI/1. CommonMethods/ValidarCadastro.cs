@@ -17,7 +17,9 @@ namespace PDV.Test.UI._1._CommonMethods
 
         public void PesquisaCadastro(string Text)
         {
-            driver.FindElement(By.ClassName("thf-input-icon-left")).SendKeys(Text);
+            var pesq = driver.FindElement(By.ClassName("thf-input-icon-left"));
+            pesq.Clear();
+            pesq.SendKeys(Text);
         }
 
         public void ValidaCadastro(string Text)
