@@ -15,7 +15,7 @@ namespace PDV.Test.UI._1._CommonMethods
             Sw = new ValidarSwitch(driver);
         }
 
-        public void PesquisaCadastro(string Text)
+        public void PesqCad(string Text)
         {
             var pesq = driver.FindElement(By.ClassName("thf-input-icon-left"));
             pesq.Clear();
@@ -25,9 +25,9 @@ namespace PDV.Test.UI._1._CommonMethods
         public void ValidaCadastro(string Text)
         {
             try
-            {         
-                PesquisaCadastro(Text);
-               
+            {
+                PesqCad(Text);
+
                 var Textresult = driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Text;
                 Assert.AreEqual(Text, Textresult);
             }
@@ -48,7 +48,7 @@ namespace PDV.Test.UI._1._CommonMethods
 
             Sw.SwitchAtivo(By.XPath("//td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div"), "Class",
             "thf-switch-container thf-clickable thf-switch-container-off", "O NOVO CADASTRO está INATIVO");
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
         }
 
     }

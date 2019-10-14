@@ -31,7 +31,7 @@ namespace PDV.Test.UI.PageObjects.PDV
             senha.SendKeys("5>E&Jg4,");
 
             Wait.LocateElementAndClick(By.XPath("//thf-container/div/div/form/div/thf-button/button"));
-            Thread.Sleep(5000);
+            Thread.Sleep(4000);
 
             Wait.LocateElement(By.ClassName("thf-page-header-title"));
             var title = driver.FindElement(By.ClassName("thf-page-header-title")).Text;

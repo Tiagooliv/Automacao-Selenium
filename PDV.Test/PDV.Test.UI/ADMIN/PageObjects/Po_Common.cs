@@ -7,5 +7,6 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public string EditarList = "//div/thf-popup/div/div[2]";
         public string DuplicarList = "//div/thf-popup/div/div[3]";
         public string ExcluirList = "//div/thf-popup/div/div[4]";
+        public string BtnConfirmarExc = "//div[3]/thf-button[2]/button/span";
     }
 }

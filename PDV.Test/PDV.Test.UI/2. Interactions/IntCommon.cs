@@ -39,6 +39,11 @@ namespace PDV.Test.UI._2._Interactions
             Wait.LocateElementAndClick(By.XPath(ExcluirList));
         }
 
+        public void ConfirmarExc()
+        {
+            Wait.LocateElementAndClick(By.XPath(BtnConfirmarExc));
+        }
+
 
     }
 }

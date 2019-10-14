@@ -25,7 +25,7 @@ namespace PDV.Test.UI._1._CommonMethods
             Wait.LocateElement(By.XPath(msg));
             var text = driver.FindElement(By.XPath(msg)).Text;
             Assert.AreEqual(Msg, text);
-            Thread.Sleep(3000);
+            Thread.Sleep(2000);
             driver.FindElement(By.XPath(msg)).Click();
         }
     

@@ -11,7 +11,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
     public class IntGrupoDeProdutos : Po_GruposDeProdutos
     {
         public IWebDriver driver;
-        WaitElement Wait;        
+        WaitElement Wait;
         ValidarMsg Msg;
         Select_Element Select;
         IntCommon intCommon;
@@ -19,7 +19,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public IntGrupoDeProdutos(IWebDriver driver)
         {
             this.driver = driver;
-            Wait = new WaitElement(driver);           
+            Wait = new WaitElement(driver);
             Select = new Select_Element(driver);
             Msg = new ValidarMsg(driver);
             intCommon = new IntCommon(driver);
@@ -77,11 +77,16 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             intCommon.MenuEditarList();
             Thread.Sleep(500);
             driver.FindElement(By.XPath(nomeGrupo)).Clear();
-
         }
 
-
-
+        public void Excluir()
+        {
+            intCommon.MenuExcluirList();
+            Thread.Sleep(500);
+            intCommon.ConfirmarExc();
+            Msg.ValidaMsg("Grupo removido com sucesso");
+            //driver.Navigate().Refresh();
+        }
 
 
     }
