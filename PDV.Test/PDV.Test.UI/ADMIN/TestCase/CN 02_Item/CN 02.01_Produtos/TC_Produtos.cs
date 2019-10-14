@@ -5,9 +5,9 @@ using PDV.Test.UI._1._CommonMethods;
 using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
-using PDV.Test.UI.PageObjects.PDV;
 using PDV.Test.UI.Interactions;
 using System;
+using PDV.Test.UI._2._Interactions;
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
 {
@@ -17,7 +17,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
         #region Fields
         private IWebDriver driver;
         HomePageTHExPOS Url;
-        PoLogin_PDV Login;
+        IntLogin LG;
         Po_Menus Menu;
         ValidarCadastro VC;
         IntProduto Ip;
@@ -27,7 +27,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
         {
             driver = new ChromeDriver();
             Url = new HomePageTHExPOS(driver);
-            Login = new PoLogin_PDV(driver);
+            LG = new IntLogin(driver);
             Menu = new Po_Menus(driver);
             Ip = new IntProduto(driver);
             VC = new ValidarCadastro(driver);
@@ -38,7 +38,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
         public void AdicionarProduto()
         {
             Url.AdminTST();
-            Login.Admin();
+            LG.LoginPOS();
             Menu.Produtos();
             Ip.BtnAdicionarProduto();
             Ip.DadosProduto("Torta de limão - Aut", "002", "Sobremesas - Aut", "KG - Quilo", "4,50");

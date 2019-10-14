@@ -1,13 +1,13 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using PDV.Test.UI._0._Login;
 using PDV.Test.UI._1._CommonMethods;
+using PDV.Test.UI._2._Interactions;
 using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
 using PDV.Test.UI.Interactions;
-using PDV.Test.UI.PageObjects.PDV;
-
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
 {
@@ -17,7 +17,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
         #region Fields
 
         HomePageTHExPOS HP;
-        PoLogin_PDV LG;
+        IntLogin LG;
         Po_Menus Menu;
         IntGrupoDeProdutos Gp;
         IntModificadores Mod;
@@ -31,7 +31,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
         {
             IWebDriver driver = new ChromeDriver();
             HP = new HomePageTHExPOS(driver);
-            LG = new PoLogin_PDV(driver);
+            LG = new IntLogin(driver);
             Menu = new Po_Menus(driver);
             Gp = new IntGrupoDeProdutos(driver);
             Mod = new IntModificadores(driver);
@@ -44,7 +44,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
         public void Regressao_Cadastros()
         {
             HP.AdminTST();
-            LG.Admin();
+            LG.LoginPOS();
 
             //Grupos
 

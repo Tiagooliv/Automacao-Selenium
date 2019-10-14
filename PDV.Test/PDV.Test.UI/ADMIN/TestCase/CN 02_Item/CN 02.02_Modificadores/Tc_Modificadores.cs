@@ -4,9 +4,9 @@ using OpenQA.Selenium.Chrome;
 using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.ADMIN.PageObjects.Menus;
 using PDV.Test.UI.CommonMethods.Utils;
-using PDV.Test.UI.PageObjects.PDV;
 using NUnit.Framework;
 using PDV.Test.UI._1._CommonMethods;
+using PDV.Test.UI._2._Interactions;
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
           
@@ -16,7 +16,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
     {
         #region Fields
         HomePageTHExPOS HP;
-        PoLogin_PDV LG;
+        IntLogin LG;
         Po_Menus Menu;
         IntModificadores Mod;
         ValidarCadastro VC;
@@ -25,7 +25,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
         {
             IWebDriver driver = new ChromeDriver();
             HP = new HomePageTHExPOS(driver);
-            LG = new PoLogin_PDV(driver);
+            LG = new IntLogin(driver);
             Menu = new Po_Menus(driver);
             Mod = new IntModificadores(driver);
             VC = new ValidarCadastro(driver);
@@ -35,7 +35,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
         public void AdicionarModificador()
         {
             HP.AdminTST();
-            LG.Admin();
+            LG.LoginPOS();
             Menu.Modificadores();
             Mod.BtnAdicionarModificador();
             Mod.DadosDoModificador("Chá - Aut", "1", "2", "UN - Unidade");

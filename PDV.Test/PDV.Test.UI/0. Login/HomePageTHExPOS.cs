@@ -27,7 +27,7 @@ namespace PDV.Test.UI.CommonMethods.Utils
             driver.Navigate().GoToUrl("https://admin-tst.thexpos.net/auth/login");            
             
             var title = driver.Title;
-            Assert.AreEqual("Admin", title);
+            Assert.AreEqual("THEx POS Management", title);
 
         }
 

@@ -1,48 +1,39 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using PDV.Test.UI._2._Interactions;
 using PDV.Test.UI.CommonMethods.Utils;
-using PDV.Test.UI.PageObjects.PDV;
+
 
 namespace PDV.Test.UI.TestPlan.LG
 {
-    [TestClass]
+    [TestFixture]
     public class TcLG_POS
     {
         
         private HomePageTHExPOS HP;
-        private PoLogin_PDV L;
+        private IntLogin Login;
 
         public TcLG_POS()
         {
             IWebDriver driver = new ChromeDriver();
             HP = new HomePageTHExPOS(driver);
-            L = new PoLogin_PDV(driver);
+            Login = new IntLogin(driver);
         }
 
-
-        [TestMethod]
-        public void AcessarPos()
-        {
-            HP.PosTST();
-            L.POS();
-        }
-
-        [TestMethod]
-
+        [Test]
         public void AcessarAdmin()
         {
             HP.AdminTST();
-            L.Admin();
+            Login.LoginPOS();
         }
 
-
-        
-
-
-
+        [Test]
+        public void AcessarPos()
+        {
+            HP.PosTST();
+            Login.LoginPOS();
+        } 
 
     }
 }
