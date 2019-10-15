@@ -58,9 +58,9 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
             //Menu.GruposDeProdutos();
             //Vc.PesqCad("Sobremesas - Aut");
             Gp.Editar();
-            Gp.DadosdoGrupo("Sobremesas - Aut Editado", "Bebidas");
+            Gp.DadosdoGrupo("Pizzas - Aut Editado", "Bebidas");
             Gp.BtnSalvar("Grupo atualizado com sucesso");
-            Vc.ValidaCadastro("Sobremesas - Aut Editado");
+            Vc.ValidaCadastro("Pizzas - Aut Editado");
             //Menu.Inicio();
         }
 
@@ -71,7 +71,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
             //LG.Admin();
             //Menu.GruposDeProdutos();
             //Vc.PesqCad("Sobremesas - Aut");
-            Gp.Excluir();
+            Gp.Excluir("Grupo removido com sucesso.");
         }
 
 

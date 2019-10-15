@@ -11,7 +11,7 @@ using PDV.Test.UI._2._Interactions;
 namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
           
 {
-    [TestClass]
+    [TestFixture]
     public class Tc_Modificadores
     {
         #region Fields
@@ -31,21 +31,21 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
             VC = new ValidarCadastro(driver);
         }                    
 
-        [TestMethod]
+        [Test]
         public void AdicionarModificador()
         {
             HP.AdminTST();
             LG.LoginPOS();
             Menu.Modificadores();
             Mod.BtnAdicionarModificador();
-            Mod.DadosDoModificador("Chá - Aut", "1", "2", "UN - Unidade");
-            Mod.Modificador("Chá", "Chá de menta", "5");
+            Mod.DadosDoModificador("Sabor da Pizza - Aut", "1", "2", "UN - Unidade");
+            Mod.Modificador("Calabresa", "Calabresa com cebola", "5");
             Mod.BtnSalvar("Modificador cadastrado com sucesso.");
-            VC.ValidaCadastro("Chá - Aut");
-            Menu.Inicio();
+            VC.ValidaCadastro("Sabor da Pizza - Aut");
+            
         }
 
-        [TestMethod]
+        [Test]
         public void EditarModificador()
         {
             

@@ -38,6 +38,7 @@ namespace PDV.Test.UI._2._Interactions
             // Seleção de estabelecimento (Criar Classes separada)
 
             driver.FindElement(By.XPath("//div/div[2]/input")).SendKeys("SQUAD PDV");
+            Thread.Sleep(500);
             driver.FindElement(By.ClassName("initials-header")).Click();
             Thread.Sleep(2000);
 

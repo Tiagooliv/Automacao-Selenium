@@ -8,10 +8,11 @@ using PDV.Test.UI.CommonMethods.Utils;
 using PDV.Test.UI.Interactions;
 using System;
 using PDV.Test.UI._2._Interactions;
+using NUnit.Framework;
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
 {
-    [TestClass]
+    [TestFixture]
     public class TC_Produtos
     {
         #region Fields
@@ -34,18 +35,18 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
 
         }
 
-        [TestMethod]
+        [Test]
         public void AdicionarProduto()
         {
             Url.AdminTST();
             LG.LoginPOS();
             Menu.Produtos();
             Ip.BtnAdicionarProduto();
-            Ip.DadosProduto("Torta de limão - Aut", "002", "Sobremesas - Aut", "KG - Quilo", "4,50");
-            Ip.Detalhes("Chá - Aut");
+            Ip.DadosProduto("Pizza - Aut", "002", "Pizzas - Aut", "KG - Quilo", "4,50");
+            Ip.Detalhes("Sabor da Pizza - Aut");
             Ip.Fiscais();
             Ip.BtnSalvar("Produto cadastrado com sucesso.");
-            VC.ValidaCadastro("Torta de limão - Aut");
+            VC.ValidaCadastro("Pizza - Aut - Aut");
             //Ip.BtnEditar();
             //Ip.EditarProduto("Torta de limão_E - Aut", "003");
             Ip.Editar();

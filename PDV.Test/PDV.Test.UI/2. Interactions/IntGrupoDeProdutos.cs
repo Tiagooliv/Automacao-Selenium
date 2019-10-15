@@ -79,12 +79,12 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             driver.FindElement(By.XPath(nomeGrupo)).Clear();
         }
 
-        public void Excluir()
+        public void Excluir(string msg)
         {
             intCommon.MenuExcluirList();
             Thread.Sleep(500);
             intCommon.ConfirmarExc();
-            Msg.ValidaMsg("Grupo removido com sucesso");
+            Msg.ValidaMsg(msg);
             //driver.Navigate().Refresh();
         }
 
