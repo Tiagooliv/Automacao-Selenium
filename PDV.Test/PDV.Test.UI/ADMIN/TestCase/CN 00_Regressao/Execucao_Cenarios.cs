@@ -68,9 +68,9 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
 
             Menu.Produtos();
             Pr.BtnAdicionarProduto();
-            Pr.DadosProduto("Torta de limão - Aut", "002", "Sobremesas - Aut", "KG - Quilo", "4,50");
+            Pr.DadosProduto("Torta de limão - Aut", "002", "Sobremesas - Aut", "KG - Quilo", "7894900019896", "4,50");
             Pr.Detalhes("Chá - Aut");
-            Pr.Fiscais();
+            Pr.Fiscais("20081100");
             Pr.BtnSalvar("Produto cadastrado com sucesso.");
             Vc.ValidaCadastro("Torta de limão - Aut");
 

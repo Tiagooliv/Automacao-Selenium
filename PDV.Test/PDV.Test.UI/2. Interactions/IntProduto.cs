@@ -35,7 +35,7 @@ namespace PDV.Test.UI.Interactions
             Wait.LocateElementAndClick(By.XPath(btnAdicionarProduto));
         }
 
-        public void DadosProduto(string NomeProduto, string CodInterno, string GrupoProduto, string UnidMedida, string PrUnitario)
+        public void DadosProduto(string NomeProduto, string CodInterno, string GrupoProduto, string UnidMedida, string CodBarras,string PrUnitario)
         {
             driver.FindElement(By.XPath(nomeproduto)).SendKeys(NomeProduto);
            
@@ -56,72 +56,34 @@ namespace PDV.Test.UI.Interactions
             driver.FindElement(By.XPath(unimedida)).SendKeys(UnidMedida);
             driver.FindElement(By.XPath(unimedida)).SendKeys(Keys.Enter);
 
+            driver.FindElement(By.XPath(Codbarras)).SendKeys(CodBarras);
+
             driver.FindElement(By.XPath(prUnitario)).SendKeys(PrUnitario);
         }
 
         public void Detalhes(string Modificadores)
         {
             driver.FindElement(By.XPath(cliquemodificadores)).Click();
-
             driver.FindElement(By.XPath(modificadores)).SendKeys(Modificadores);
 
             driver.FindElement(By.XPath(cliquemodifdetalhes)).Click();
-
             driver.FindElement(By.XPath(modificadores)).SendKeys(Keys.Tab);
-
         }
 
-        public void Fiscais()
+        public void Fiscais(string NCM)
         {
-            driver.FindElement(By.XPath(cliquefiscais)).Click();
-
-            driver.FindElement(By.XPath(cliquefiscaisSelect)).Click();
+            
+            driver.FindElement(By.XPath(CodNCM)).SendKeys(NCM);
+            Wait.LocateElementAndClick(By.XPath(CliqueNCM));
+            driver.FindElement(By.XPath(CodNCM)).SendKeys(Keys.Tab);           
             
         }
 
-        public void BtnSalvar(string BtnMsg)
+        public void BtnSalvar(string msg)
         {
             driver.FindElement(By.XPath(salvar)).Click();//Salvar
-            //Wait.LocateElement(By.XPath(msg)); //Aguarda mensagem na tela
-
-            // Valida a mensagem  
-            //var Msg = driver.FindElement(By.XPath(msg)).Text;
-            //Assert.AreEqual("Produto cadastrado com sucesso.", Msg);
-            //Thread.Sleep(3000);
-            //driver.FindElement(By.XPath(msg)).Click();
-
-            Msg.ValidaMsg(BtnMsg);
-
-
-        }
-
-        //public void BtnEditar()
-        //{
-        //    driver.FindElement(By.XPath(trespontos)).Click();
-
-        //    driver.FindElement(By.XPath(editar)).Click();
-
-        //}
-
-        //public void EditarProduto(string NomeProduto, string CodInterno)
-        //{
-            //Thread.Sleep(3000);
-
-            //driver.FindElement(By.XPath(nomeproduto)).Clear();
-
-            //Thread.Sleep(3000);
-
-            //driver.FindElement(By.XPath(codinterno)).Clear();
-
-            //driver.FindElement(By.XPath(nomeproduto)).SendKeys(NomeProduto);
-
-            //Thread.Sleep(3000);
-
-            //driver.FindElement(By.XPath(codinterno)).SendKeys(CodInterno);
-            //driver.FindElement(By.XPath(codinterno)).SendKeys(Keys.Tab);
-      
-
-        //}
+            Msg.ValidaMsg(msg);
+        }       
 
         public void Editar()
         {

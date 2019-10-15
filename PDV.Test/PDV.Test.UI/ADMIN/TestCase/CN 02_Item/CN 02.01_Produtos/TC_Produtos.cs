@@ -42,11 +42,17 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
             LG.LoginPOS();
             Menu.Produtos();
             Ip.BtnAdicionarProduto();
-            Ip.DadosProduto("Pizza - Aut", "002", "Pizzas - Aut", "KG - Quilo", "4,50");
+            Ip.DadosProduto("Pizza - Aut", "002", "Pizzas - Aut", "KG - Quilo", "7894900019896", "4,50");
             Ip.Detalhes("Sabor da Pizza - Aut");
-            Ip.Fiscais();
+            Ip.Fiscais("20081100");
             Ip.BtnSalvar("Produto cadastrado com sucesso.");
-            VC.ValidaCadastro("Pizza - Aut - Aut");
+            VC.ValidaCadastro("Pizza - Aut");
+        }
+
+        [Test]
+
+        public void EditarProduto()
+        { 
             //Ip.BtnEditar();
             //Ip.EditarProduto("Torta de limão_E - Aut", "003");
             Ip.Editar();

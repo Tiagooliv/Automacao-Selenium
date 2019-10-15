@@ -6,7 +6,7 @@ using PDV.Test.UI.POS.CommonMethods;
 
 namespace PDV.Test.UI._1._CommonMethods
 {
-    [TestClass]
+   
     public class ValidarMsg
     {
         IWebDriver driver;
@@ -18,8 +18,7 @@ namespace PDV.Test.UI._1._CommonMethods
             this.driver = driver;
             Wait = new WaitElement(driver);                  
         }
-
-        [TestMethod]
+        
         public void ValidaMsg(string Msg)
         {
             Wait.LocateElement(By.XPath(msg));
