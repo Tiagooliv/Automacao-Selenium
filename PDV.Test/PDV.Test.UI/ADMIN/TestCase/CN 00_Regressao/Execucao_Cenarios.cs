@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using PDV.Test.UI._0._Login;
@@ -11,7 +12,7 @@ using PDV.Test.UI.Interactions;
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
 {
-    [TestClass]
+    [TestFixture]
     public class Execucao_Cenarios
     {
         #region Fields
@@ -40,7 +41,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_00_Regressao
             Vc = new ValidarCadastro(driver);
         }
 
-        [TestMethod]
+        [Test]
         public void Regressao_Cadastros()
         {
             HP.AdminTST();

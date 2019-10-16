@@ -24,23 +24,23 @@ namespace PDV.Test.UI._2._Interactions
 
         public void LoginPOS ()
         {
-            driver.FindElement(By.XPath(email)).SendKeys("teste@totvs.com.br");
+            driver.FindElement(By.XPath(email)).SendKeys("aut@totvs.com.br");
             driver.FindElement(By.XPath(senha)).SendKeys("1234");
             driver.FindElement(By.XPath(BtnEntrar)).Click();
-            Thread.Sleep(4000);
+            Thread.Sleep(10000);
 
             //Valida título da página
 
-            Wait.LocateElement(By.ClassName(tituloPg));
-            var title = driver.FindElement(By.ClassName(tituloPg)).Text;
-            Assert.AreEqual("Estabelecimentos", title);
+            //Wait.LocateElement(By.ClassName(tituloPg));
+            //var title = driver.FindElement(By.ClassName(tituloPg)).Text;
+            //Assert.AreEqual("Estabelecimentos", title);
 
-            // Seleção de estabelecimento (Criar Classes separada)
+            // Seleção de estabelecimento (Criar Classes separadas)
 
-            driver.FindElement(By.XPath("//div/div[2]/input")).SendKeys("SQUAD PDV");
-            Thread.Sleep(500);
-            driver.FindElement(By.ClassName("initials-header")).Click();
-            Thread.Sleep(2000);
+            //driver.FindElement(By.XPath("//div/div[2]/input")).SendKeys("SQUAD PDV");
+            //Thread.Sleep(500);
+            //driver.FindElement(By.ClassName("initials-header")).Click();
+            //Thread.Sleep(2000);
 
         }
 

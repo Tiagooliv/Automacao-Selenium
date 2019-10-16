@@ -46,6 +46,7 @@ namespace PDV.Test.UI.Interactions
             driver.FindElement(By.XPath(EstabClique1)).Click();
             Thread.Sleep(500);
             driver.FindElement(By.XPath(EstabClique2)).Click();
+
             Select.ByText(By.XPath(país), País);
             Select.ByText(By.XPath(idioma), Idioma);
         }
@@ -60,12 +61,13 @@ namespace PDV.Test.UI.Interactions
         }
 
         public void AssociarItens(string NomeProd)
-        {
-            //Pesquisa Item
-            driver.FindElement(By.XPath(nomeProd)).SendKeys(NomeProd);
-
+        {         
+          
             try
             {
+                //Pesquisa Item
+                driver.FindElement(By.XPath(nomeProd)).SendKeys(NomeProd);
+
                 //Valida resultado
                 var Result = driver.FindElement(By.XPath(result)).Text.ToUpper();
                 Assert.AreEqual(NomeProd.ToUpper(), Result);

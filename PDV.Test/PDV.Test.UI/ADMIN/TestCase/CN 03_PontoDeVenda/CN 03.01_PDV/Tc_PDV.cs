@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using PDV.Test.UI._1._CommonMethods;
@@ -11,7 +12,7 @@ using PDV.Test.UI.Interactions;
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_03_PontoDeVenda.CN_03._01_PDV
 {
-    [TestClass]
+    [TestFixture]
     public class Tc_PDV
     {
         private HomePageTHExPOS HP;
@@ -30,16 +31,16 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_03_PontoDeVenda.CN_03._01_PDV
             VC = new ValidarCadastro(driver);
         }
 
-        [TestMethod]
+        [Test]
         public void AdicionarPDV()
         {
             HP.AdminTST();
             LG.LoginPOS();
             Menu.PDV();
             PDV.BtnAdicionarPDV();
-            PDV.Dados("PDV - Aut", "cm", "Portugal", "Espanhol");
+            PDV.Dados("PDV - Aut", "SQUAD PDV S/A", "Brasil", "Português");
             PDV.TaxaServico("7", "10", "13");
-            PDV.AssociarItens("Churrasco");
+            PDV.AssociarItens("Cigarro");
             PDV.BtnSalvar("Ponto de venda cadastrado com sucesso.");
             VC.ValidaCadastro("PDV - Aut");
             Menu.Inicio();

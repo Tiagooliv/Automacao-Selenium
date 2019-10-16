@@ -19,7 +19,8 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
         IntLogin LG;
         Po_Menus Menu;
         IntModificadores Mod;
-        ValidarCadastro VC;
+        ValidarCadastro Vc;
+        
         #endregion
         public Tc_Modificadores()
         {
@@ -28,7 +29,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
             LG = new IntLogin(driver);
             Menu = new Po_Menus(driver);
             Mod = new IntModificadores(driver);
-            VC = new ValidarCadastro(driver);
+            Vc = new ValidarCadastro(driver);
         }                    
 
         [Test]
@@ -41,14 +42,32 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
             Mod.DadosDoModificador("Sabor da Pizza - Aut", "1", "2", "UN - Unidade");
             Mod.Modificador("Calabresa", "Calabresa com cebola", "5");
             Mod.BtnSalvar("Modificador cadastrado com sucesso.");
-            VC.ValidaCadastro("Sabor da Pizza - Aut");
+            Vc.ValidaCadastro("Sabor da Pizza - Aut");
             
         }
 
         [Test]
         public void EditarModificador()
         {
-            
+            //HP.AdminTST();
+            //LG.LoginPOS();
+            //Menu.Modificadores();
+            //Vc.PesqCad("Sabor da Pizza - Aut");
+            Mod.Editar();
+            Mod.DadosDoModificador("Sabor da Pizza - Aut Editado", "", "", "UN - Unidade");
+            Mod.BtnSalvar("Modificador atualizado com sucesso.");
+            Vc.ValidaCadastro("Sabor da Pizza - Aut Editado");            
+        }
+
+        [Test]
+        public void ExcluirModificador()
+        {
+            //HP.AdminTST();
+            //LG.LoginPOS();
+            //Menu.Modificadores();
+            //Vc.PesqCad("Sabor da Pizza - Aut");
+            Mod.Excluir("Modificador removido com sucesso.");
+
         }
 
 

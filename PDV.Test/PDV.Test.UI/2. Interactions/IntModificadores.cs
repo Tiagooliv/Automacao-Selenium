@@ -16,6 +16,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         WaitElement Wait;
         Select_Element Select;
         ValidarMsg Msg;
+        IntCommon intCommon;
 
         public IntModificadores(IWebDriver driver)
         {
@@ -23,6 +24,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             Wait = new WaitElement(driver);
             Select = new Select_Element(driver);
             Msg = new ValidarMsg(driver);
+            intCommon = new IntCommon(driver);
         }
 
         public void BtnAdicionarModificador()
@@ -58,6 +60,21 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public void BtnSalvar(string msg)
         {
             driver.FindElement(By.XPath(btnSalvar)).Click();
+            Msg.ValidaMsg(msg);
+        }
+
+        public void Editar()
+        {
+            intCommon.MenuEditarList();
+            Thread.Sleep(1000);
+            driver.FindElement(By.ClassName(nomeMod)).Clear();
+        }
+
+        public void Excluir(string msg)
+        {
+            intCommon.MenuExcluirList();
+            Thread.Sleep(500);
+            intCommon.ConfirmarExc();
             Msg.ValidaMsg(msg);
         }
 
