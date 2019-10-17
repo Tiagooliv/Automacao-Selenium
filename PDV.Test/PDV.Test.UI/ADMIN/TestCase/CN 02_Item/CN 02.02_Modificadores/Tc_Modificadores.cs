@@ -15,22 +15,24 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
     public class Tc_Modificadores
     {
         #region Fields
+
         HomePageTHExPOS HP;
         IntLogin LG;
         Po_Menus Menu;
         IntModificadores Mod;
         ValidarCadastro Vc;
-        
+                
         #endregion
         public Tc_Modificadores()
         {
             IWebDriver driver = new ChromeDriver();
+            //this.driver = driver;
             HP = new HomePageTHExPOS(driver);
             LG = new IntLogin(driver);
             Menu = new Po_Menus(driver);
             Mod = new IntModificadores(driver);
             Vc = new ValidarCadastro(driver);
-        }                    
+        }
 
         [Test]
         public void AdicionarModificador()

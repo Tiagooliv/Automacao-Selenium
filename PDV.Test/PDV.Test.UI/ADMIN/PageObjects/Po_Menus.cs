@@ -1,10 +1,13 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using PDV.Test.UI.POS.CommonMethods;
 using System.Threading;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace PDV.Test.UI.ADMIN.PageObjects.Menus
 {
+    
     public class Po_Menus
     {
         private IWebDriver driver;
@@ -16,6 +19,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
             Wait = new WaitElement(driver);
         }
 
+        
         public void ValidarTituloLista(string TituloLista)
         {
             Wait.LocateElement(By.XPath("//div/div[1]/button/span[2]"));
@@ -42,6 +46,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
             ValidarTituloLista("PRODUTOS");
         }
 
+        
         public void Modificadores()
         {
             Item();            

@@ -47,16 +47,16 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos
             Gp.IconeGrupo();
             Gp.BtnSalvar("Grupo criado com sucesso");
             Vc.ValidaCadastro("Pizzas - Aut");
-
+            
         }
 
         [Test]
         public void EditarGrupo()
         {
-            //HP.AdminTST();
-            //LG.Admin();
-            //Menu.GruposDeProdutos();
-            //Vc.PesqCad("Sobremesas - Aut");
+            HP.AdminTST();
+            LG.LoginPOS();
+            Menu.GruposDeProdutos();
+            Vc.PesqCad("Sobremesas - Aut");
             Gp.Editar();
             Gp.DadosdoGrupo("Pizzas - Aut Editado", "Bebidas");
             Gp.BtnSalvar("Grupo atualizado com sucesso");
