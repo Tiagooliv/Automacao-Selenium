@@ -7,6 +7,7 @@ using PDV.Test.UI.CommonMethods.Utils;
 using NUnit.Framework;
 using PDV.Test.UI._1._CommonMethods;
 using PDV.Test.UI._2._Interactions;
+using PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos;
 
 namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
           
@@ -21,17 +22,17 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores
         Po_Menus Menu;
         IntModificadores Mod;
         ValidarCadastro Vc;
+             
                 
         #endregion
         public Tc_Modificadores()
         {
             IWebDriver driver = new ChromeDriver();
-            //this.driver = driver;
             HP = new HomePageTHExPOS(driver);
             LG = new IntLogin(driver);
             Menu = new Po_Menus(driver);
             Mod = new IntModificadores(driver);
-            Vc = new ValidarCadastro(driver);
+            Vc = new ValidarCadastro(driver);           
         }
 
         [Test]

@@ -18,7 +18,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public string result = "//tbody[1]/tr/td[2]/div/span";
         public string SwitchItem = "//tr/td[1]/div/span/thf-switch/thf-field-container/div/div[2]/div";
         public string QuadroVazio = "//ni-table[1]/thf-container/div/div/div/div/div/table/tbody/tr/td/span";
-        public string btnsalvar = "//div[6]/thf-button[2]/button/span";          
+        public string btnsalvar = "//div[7]/thf-button[2]/button/span";          
                
     }
 }
