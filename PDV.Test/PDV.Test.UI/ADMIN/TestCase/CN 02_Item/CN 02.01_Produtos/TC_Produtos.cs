@@ -22,6 +22,7 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
         Po_Menus Menu;
         ValidarCadastro VC;
         IntProduto Ip;
+
         #endregion
 
         public TC_Produtos()
@@ -52,15 +53,38 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos
         [Test]
 
         public void EditarProduto()
-        { 
-            //Ip.BtnEditar();
-            //Ip.EditarProduto("Torta de limão_E - Aut", "003");
-            Ip.Editar();
+        {
+            //Url.AdminTST();
+            //LG.LoginPOS();
+            //Menu.Produtos();
+            Ip.Editar("Pizza_E - Aut - Copy");
             Ip.BtnSalvar("Produto cadastrado com sucesso.");
-            VC.ValidaCadastro("Torta de limão_E - Aut");
-            Ip.DuplicarProduto();
-            VC.ValidaCadastro("Torta de limão_E - Aut - Copy");
+            VC.ValidaCadastro("Pizza_E - Aut - Copy");
+
+        }
+
+        [Test]
+
+        public void DuplicarProduto()
+        {
+            //Url.AdminTST();
+            //LG.LoginPOS();
+            //Menu.Produtos();
+            Ip.DuplicarProduto("Pizza - Aut");
+            VC.ValidaCadastro("Pizza - Aut - Copy");
+            //Menu.Inicio();
+        }
+
+        [Test]
+        public void ExcluirProduto()
+        {
+            //HP.AdminTST();
+            //LG.Admin();
+            //Menu.GruposDeProdutos();
+            //Vc.PesqCad("Sobremesas - Aut");
+            Ip.Excluir("Produto removido com sucesso.");
             Menu.Inicio();
         }
+
     }
 }
