@@ -22,8 +22,10 @@ namespace PDV.Test.UI._2._Interactions
 
         }
 
+
         public void MenuEditarList()
         {
+            //Thread.Sleep(1000);
             MenuTresPontosList();
             Wait.LocateElementAndClick(By.XPath(EditarList));
         }

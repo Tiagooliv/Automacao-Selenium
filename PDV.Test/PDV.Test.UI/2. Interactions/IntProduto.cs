@@ -85,25 +85,30 @@ namespace PDV.Test.UI.Interactions
             Msg.ValidaMsg(msg);
         }       
 
-        public void Editar()
+        public void Editar(string NomeProduto)
         {
+            //Thread.Sleep(1000);
             intCommon.MenuEditarList();
             Thread.Sleep(1000);
             driver.FindElement(By.XPath(nomeproduto)).Clear();
+            Thread.Sleep(1000);
+            driver.FindElement(By.XPath(nomeproduto)).SendKeys(NomeProduto);
 
         }
 
-        public void DuplicarProduto()
+        public void DuplicarProduto(string NomeProduto)
         {
+            //driver.FindElement(By.XPath(procurar)).SendKeys(NomeProduto);
+
             driver.FindElement(By.XPath(trespontos)).Click();
 
             driver.FindElement(By.XPath(duplicar)).Click();
 
             driver.FindElement(By.XPath(confirmar)).Click();
 
-            Msg.ValidaMsg("Produto duplicado com sucesso");
+            Msg.ValidaMsg("Produto duplicado com sucesso.");
 
-            driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Clear();
+            //driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Clear();
         }
 
         #region Validação antiga
@@ -127,5 +132,14 @@ namespace PDV.Test.UI.Interactions
 
         //}
         #endregion
+
+        public void Excluir(string msg)
+        {
+            intCommon.MenuExcluirList();
+            Thread.Sleep(500);
+            intCommon.ConfirmarExc();
+            Msg.ValidaMsg(msg);
+            //driver.Navigate().Refresh();
+        }
     }
 }

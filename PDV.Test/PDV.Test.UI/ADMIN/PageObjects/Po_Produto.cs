@@ -29,7 +29,10 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public string salvar = "//div[6]/thf-button[2]/button/span";
         public string trespontos = "//div/div/div/div/div/table/tbody/tr/td[7]/span";
         public string editar = "//div/div/div/div/div/thf-popup/div/div[2]";
-       
+        public string procurar = "//div/div[1]/thf-input/thf-field-container/div/div[2]/input";
+
+
+
 
         //Verificar a inclusão das variáveis em na classe IntCommon
         public string duplicar = "//div/div[2]/div/ni-table/thf-container/div/div/div/div/div/thf-popup/div/div[3]";
