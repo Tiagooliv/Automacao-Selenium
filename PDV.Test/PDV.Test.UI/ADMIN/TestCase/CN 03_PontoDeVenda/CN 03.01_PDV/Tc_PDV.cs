@@ -40,22 +40,34 @@ namespace PDV.Test.UI.ADMIN.TestCase.CN_03_PontoDeVenda.CN_03._01_PDV
             PDV.BtnAdicionarPDV();
             PDV.Dados("PDV - Aut", "ESTAB. AUTOMATIZADO", "Brasil", "Português");
             PDV.TaxaServico("7", "10", "13");
-            PDV.AssociarItens("Pizza - Aut");
+            //PDV.AssociarItens("Pizza - Aut");
             PDV.BtnSalvar("Ponto de venda cadastrado com sucesso.");
             VC.ValidaCadastro("PDV - Aut");
                         
         }
 
         [Test]
-        public void Editar()
+        public void EditarPDV()
         {
-            HP.AdminTST();
-            LG.LoginPOS();
-            Menu.PDV();
+            //HP.AdminTST();
+            //LG.LoginPOS();
+            //Menu.PDV();
+            //VC.PesqCad("PDV - Aut");
             PDV.Editar();
-            PDV.Dados("PDV - Aut Edit", "SQUAD PDV S/A", "Brasil", "Português");
+            PDV.Dados("PDV - Aut Edit", "ESTAB. AUTOMATIZADO", "Brasil", "Português");
             PDV.BtnSalvar("Ponto de venda atualizado com sucesso.");
+            VC.ValidaCadastro("PDV - Aut Edit");
 
+        }
+
+        [Test]
+        public void ExcluirPDV()
+        {
+            //HP.AdminTST();
+            //LG.LoginPOS();
+            //Menu.PDV();
+            VC.PesqCad("PDV - Aut");
+            PDV.Excuir("Ponto de venda excluído com sucesso.");
         }
     }
 }

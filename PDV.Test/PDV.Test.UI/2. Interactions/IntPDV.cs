@@ -108,5 +108,14 @@ namespace PDV.Test.UI.Interactions
             Thread.Sleep(1000);
         }
 
+        public void Excuir(string msg)
+        {
+            intCommon.MenuExcluirList();
+            Thread.Sleep(500);
+            intCommon.ConfirmarExc();
+            Msg.ValidaMsg(msg);
+
+        }
+
     }
 }
