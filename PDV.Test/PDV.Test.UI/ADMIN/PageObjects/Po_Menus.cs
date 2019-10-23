@@ -1,21 +1,28 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using OpenQA.Selenium;
+using PDV.Test.UI._2._Interactions;
 using PDV.Test.UI.POS.CommonMethods;
 using System.Threading;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace PDV.Test.UI.ADMIN.PageObjects.Menus
 {
+    
     public class Po_Menus
     {
         private IWebDriver driver;
         private WaitElement Wait;
+        private IntCommon intCommon;
 
         public Po_Menus(IWebDriver driver)
         {
             this.driver = driver;
             Wait = new WaitElement(driver);
+            intCommon = new IntCommon(driver);
         }
 
+        
         public void ValidarTituloLista(string TituloLista)
         {
             Wait.LocateElement(By.XPath("//div/div[1]/button/span[2]"));
@@ -42,6 +49,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
             ValidarTituloLista("PRODUTOS");
         }
 
+        
         public void Modificadores()
         {
             Item();            
@@ -74,8 +82,17 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
         {
             PontoDeVenda();            
             Wait.LocateElementAndClick(By.XPath("//div[3]/thf-menu-item/div/div[2]/div[1]/thf-menu-item/a/div/div"));//PDV
+            Thread.Sleep(500);
             ValidarTituloLista("PONTOS DE VENDA");
         } 
+        public void Mesas(string NomePDV)
+        {
+            PontoDeVenda();
+            Wait.LocateElementAndClick(By.XPath("//div[3]/thf-menu-item/div/div[2]/div[2]/thf-menu-item/a/div/div"));//Mesas
+            intCommon.AcessarEmpPDV(NomePDV);
+            Thread.Sleep(500);            
+            ValidarTituloLista("MESAS");
+        }
 
 
 

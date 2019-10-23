@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using PDV.Test.UI._1._CommonMethods;
+using PDV.Test.UI._2._Interactions;
 using PDV.Test.UI.ADMIN.PageObjects;
 using PDV.Test.UI.POS.CommonMethods;
 using System.Threading;
@@ -15,7 +16,7 @@ namespace PDV.Test.UI.Interactions
         WaitElement Wait;
         Select_Element Select;
         ValidarMsg Msg;
-        Po_Common Poc;
+        IntCommon intCommon;
         
 
         public IntPDV(IWebDriver driver)
@@ -24,7 +25,7 @@ namespace PDV.Test.UI.Interactions
             Wait = new WaitElement(driver);
             Select = new Select_Element(driver);
             Msg = new ValidarMsg(driver);
-            Poc = new Po_Common();
+            intCommon = new IntCommon(driver);
         }
 
         public void BtnAdicionarPDV()
@@ -37,7 +38,7 @@ namespace PDV.Test.UI.Interactions
 
         public void Dados(string NomePDV, string Estab, string País, string Idioma)
         {
-            driver.FindElement(By.ClassName("thf-input")).SendKeys(NomePDV);
+            driver.FindElement(By.ClassName(nomePDV)).SendKeys(NomePDV);
 
             //*** Estabelecimento, componente não funciona select ***
 
@@ -95,13 +96,16 @@ namespace PDV.Test.UI.Interactions
 
         public void BtnSalvar(string msg)
         {
-            driver.FindElement(By.ClassName(btnsalvar)).Click();
+            driver.FindElement(By.XPath(btnsalvar)).Click();
             Msg.ValidaMsg(msg);
         }
 
         public void Editar() 
         {
-            
+            intCommon.MenuEditarList();
+            Thread.Sleep(1000);
+            driver.FindElement(By.ClassName(nomePDV)).Clear();
+            Thread.Sleep(1000);
         }
 
     }

@@ -75,12 +75,14 @@
     <Compile Include="1. CommonMethods\WaitElement.cs" />
     <Compile Include="2. Interactions\IntCommon.cs" />
     <Compile Include="0. Login\IntLogin.cs" />
+    <Compile Include="2. Interactions\IntMesas.cs" />
     <Compile Include="2. Interactions\IntProduto.cs" />
     <Compile Include="2. Interactions\IntModificadores.cs" />
     <Compile Include="2. Interactions\IntPDV.cs" />
     <Compile Include="ADMIN\PageObjects\Po_Common.cs" />
     <Compile Include="ADMIN\PageObjects\Po_GruposDeProdutos.cs" />
     <Compile Include="ADMIN\PageObjects\Po_Menus.cs" />
+    <Compile Include="ADMIN\PageObjects\Po_Mesas.cs" />
     <Compile Include="ADMIN\PageObjects\Po_Modificadores.cs" />
     <Compile Include="ADMIN\PageObjects\Po_PDV.cs" />
     <Compile Include="ADMIN\PageObjects\Po_Produto.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.03_GruposDeProdutos\Tc_GruposDeProdutos.cs" />
     <Compile Include="ADMIN\TestCase\CN 03_PontoDeVenda\CN 03.01_PDV\Tc_PDV.cs" />
     <Compile Include="2. Interactions\IntGrupoDeProdutos.cs" />
+    <Compile Include="ADMIN\TestCase\CN 03_PontoDeVenda\CN 03.02_Mesas\Tc_Mesas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="0. Login\TcLogin.cs" />
   </ItemGroup>

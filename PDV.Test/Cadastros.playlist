@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._01_Produtos.TC_Produtos.AdicionarProduto" /><Add Test="PDV.Test.UI.ADMIN.TestCase.CN_02_Item.CN_02._02_Modificadores.Tc_Modificadores.AdicionarModificador" /><Add Test="PDV.Test.UI.ADMIN.TestCase.CN_02_ITEM.CN_02._03_GruposDeProdutos.Tc_GruposDeProdutos.AdicionarGrupo" /></Playlist>

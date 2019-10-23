@@ -12,7 +12,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
 {
     public class IntModificadores : Po_Modificadores
     {
-        private IWebDriver driver;
+        public IWebDriver driver;
         WaitElement Wait;
         Select_Element Select;
         ValidarMsg Msg;
