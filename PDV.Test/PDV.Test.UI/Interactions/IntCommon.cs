@@ -47,11 +47,12 @@ namespace PDV.Test.UI._2._Interactions
             Wait.LocateElementAndClick(By.XPath(BtnConfirmarExc));
         }
 
-        public void AcessarEmpPDV(string Text)
+        public void PesqEmpPDV(string Text)
         {
-            Thread.Sleep(1000);
+           
             driver.FindElement(By.XPath(PesqPDvEstab)).SendKeys(Text);
             Wait.LocateElementAndClick(By.ClassName(CliqPDvEstab));
+            Thread.Sleep(1000);
         }
 
 

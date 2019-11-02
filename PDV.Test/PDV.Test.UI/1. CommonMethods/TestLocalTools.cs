@@ -48,5 +48,14 @@ namespace PDV.Test.UI.CommonMethods.Utils
             public const string HPPos = "https://pos-front-tst.totvscmnet-cloud.net/auth/LG";
         }
 
+        public void Setup()
+
+        {
+
+            ChromeOptions options = new ChromeOptions();
+            options.AddArguments("--kiosk");
+            ChromeDriver _driver = new ChromeDriver(options);
+        }
+
     }
 }

@@ -89,8 +89,8 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
         {
             PontoDeVenda();
             Wait.LocateElementAndClick(By.XPath("//div[3]/thf-menu-item/div/div[2]/div[2]/thf-menu-item/a/div/div"));//Mesas
-            intCommon.AcessarEmpPDV(NomePDV);
-            Thread.Sleep(500);            
+            //intCommon.PesqEmpPDV(NomePDV);
+            Thread.Sleep(2000);            
             ValidarTituloLista("MESAS");
         }
 

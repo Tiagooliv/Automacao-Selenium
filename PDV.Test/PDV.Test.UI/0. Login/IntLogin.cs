@@ -24,10 +24,10 @@ namespace PDV.Test.UI._2._Interactions
 
         public void LoginPOS ()
         {
-            driver.FindElement(By.XPath(email)).SendKeys("aut@totvs.com.br");
+            driver.FindElement(By.XPath(email)).SendKeys("teste@totvs.com.br");
             driver.FindElement(By.XPath(senha)).SendKeys("1234");
             driver.FindElement(By.XPath(BtnEntrar)).Click();
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
 
             //Valida título da página
 

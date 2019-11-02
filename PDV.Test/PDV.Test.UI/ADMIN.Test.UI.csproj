@@ -73,36 +73,33 @@
     <Compile Include="0. Login\HomePageTHExPOS.cs" />
     <Compile Include="1. CommonMethods\TestLocalTools.cs" />
     <Compile Include="1. CommonMethods\WaitElement.cs" />
-    <Compile Include="2. Interactions\IntCommon.cs" />
+    <Compile Include="Interactions\IntCommon.cs" />
     <Compile Include="0. Login\IntLogin.cs" />
-    <Compile Include="2. Interactions\IntMesas.cs" />
-    <Compile Include="2. Interactions\IntProduto.cs" />
-    <Compile Include="2. Interactions\IntModificadores.cs" />
-    <Compile Include="2. Interactions\IntPDV.cs" />
-    <Compile Include="ADMIN\PageObjects\Po_Common.cs" />
-    <Compile Include="ADMIN\PageObjects\Po_GruposDeProdutos.cs" />
-    <Compile Include="ADMIN\PageObjects\Po_Menus.cs" />
-    <Compile Include="ADMIN\PageObjects\Po_Mesas.cs" />
-    <Compile Include="ADMIN\PageObjects\Po_Modificadores.cs" />
-    <Compile Include="ADMIN\PageObjects\Po_PDV.cs" />
-    <Compile Include="ADMIN\PageObjects\Po_Produto.cs" />
-    <Compile Include="ADMIN\TestCase\CN 00_Regressao\Execucao_Cenarios.cs" />
-    <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.01_Produtos\Tc_Produtos.cs" />
-    <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.02_Modificadores\Tc_Modificadores.cs" />
-    <Compile Include="ADMIN\TestCase\CN 02_Item\CN 02.03_GruposDeProdutos\Tc_GruposDeProdutos.cs" />
-    <Compile Include="ADMIN\TestCase\CN 03_PontoDeVenda\CN 03.01_PDV\Tc_PDV.cs" />
-    <Compile Include="2. Interactions\IntGrupoDeProdutos.cs" />
-    <Compile Include="ADMIN\TestCase\CN 03_PontoDeVenda\CN 03.02_Mesas\Tc_Mesas.cs" />
+    <Compile Include="Interactions\IntMesas.cs" />
+    <Compile Include="Interactions\IntProduto.cs" />
+    <Compile Include="Interactions\IntModificadores.cs" />
+    <Compile Include="Interactions\IntPDV.cs" />
+    <Compile Include="Interactions\IntGrupoDeProdutos.cs" />
+    <Compile Include="PageObjects\Po_Common.cs" />
+    <Compile Include="PageObjects\Po_GruposDeProdutos.cs" />
+    <Compile Include="PageObjects\Po_Menus.cs" />
+    <Compile Include="PageObjects\Po_Mesas.cs" />
+    <Compile Include="PageObjects\Po_Modificadores.cs" />
+    <Compile Include="PageObjects\Po_PDV.cs" />
+    <Compile Include="PageObjects\Po_Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="0. Login\TcLogin.cs" />
+    <Compile Include="TestCase\CN 00_Regressao\Execucao_Cenarios.cs" />
+    <Compile Include="TestCase\CN 02_Item\Tc_GruposDeProdutos.cs" />
+    <Compile Include="TestCase\CN 02_Item\Tc_Modificadores.cs" />
+    <Compile Include="TestCase\CN 02_Item\Tc_Produtos.cs" />
+    <Compile Include="TestCase\CN 03_PontoDeVenda\Tc_Mesas.cs" />
+    <Compile Include="TestCase\CN 03_PontoDeVenda\Tc_PDV.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="POS\PageObjects\" />
-    <Folder Include="POS\TestPlan\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -110,8 +107,8 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
-    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.76.0.0\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.76.0.0\build\Selenium.Chrome.WebDriver.targets'))" />
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props'))" />
+    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.77.0.0\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.77.0.0\build\Selenium.Chrome.WebDriver.targets'))" />
   </Target>
-  <Import Project="..\packages\Selenium.Chrome.WebDriver.76.0.0\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.76.0.0\build\Selenium.Chrome.WebDriver.targets')" />
+  <Import Project="..\packages\Selenium.Chrome.WebDriver.77.0.0\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.77.0.0\build\Selenium.Chrome.WebDriver.targets')" />
 </Project>

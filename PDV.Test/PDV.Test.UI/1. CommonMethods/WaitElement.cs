@@ -13,7 +13,7 @@ namespace PDV.Test.UI.POS.CommonMethods
         public WaitElement(IWebDriver driver)
         {
             this._driver = driver;
-            Wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
+            Wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(15));
         }
 
         public void LocateElement(By locator)
