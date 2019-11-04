@@ -1,10 +1,7 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using PDV.Test.UI.POS.CommonMethods;
 using POS.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -14,20 +11,34 @@ namespace POS.Interactions
     {
         IWebDriver driver;
         WaitElement Wait;
+        
         public IntTelaDeLancamentos(IWebDriver driver)
         {
             this.driver = driver;
             Wait = new WaitElement(driver);
         }
 
-        public void LancarItem(string Prod)
+        public void PesquisarProd(string DescProd, string PrecoProd)
         {
             var prod = driver.FindElement(By.ClassName(pesqProd));
-            prod.SendKeys(Prod);
+            prod.SendKeys(DescProd);
             Thread.Sleep(500);
             prod.SendKeys(Keys.Enter);
+
+            var precoprod = driver.FindElement(By.XPath(precoProd)).Text;
+            Assert.AreEqual(PrecoProd, precoprod);
+        }
+
+        public void LancarProd()
+        {            
             Thread.Sleep(1000);
-            Wait.LocateElementAndClick(By.XPath(CliqueItem));
+            Wait.LocateElementAndClick(By.XPath(CliqueItem));            
+        }
+
+        public void ValidaSubtotal(string Subtotal)
+        {
+            var sub = driver.FindElement(By.XPath(subtotal)).Text;
+            Assert.AreEqual(Subtotal, sub);
         }
 
         public void EnviarPedido()
@@ -41,6 +52,8 @@ namespace POS.Interactions
             Wait.LocateElementAndClick(By.XPath(btnPagamento));
 
         }
+
+        
 
 
 

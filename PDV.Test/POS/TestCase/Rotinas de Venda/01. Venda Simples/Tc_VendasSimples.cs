@@ -45,14 +45,17 @@ namespace POS.TestCase.Rotinas_de_Venda._01._Venda_Simples
 
             //for (int i = 0; i < 5; i++)
             //{
-                TP.Pesquisar("Mesa 1");
-                TP.AbrirMesa();
-                TL.LancarItem("Água mineral");
-                TL.EnviarPedido();
-                TL.BtnPagamento();
-                PG.Dinheiro();
-                PG.Confirmar();
-                Msg.ValidaMsg("Conta paga com sucesso");
+            TP.Pesquisar("Mesa 1");
+            TP.AbrirMesa();
+            TL.PesquisarProd("Água mineral", " 4,50");
+            TL.LancarProd();
+            TL.ValidaSubtotal("R$ 4,50");
+            TL.EnviarPedido();
+            TL.BtnPagamento();
+            PG.Dinheiro();
+            PG.Confirmar();
+            Msg.ValidaMsg("Conta paga com sucesso");
+
             //}
         }
 
