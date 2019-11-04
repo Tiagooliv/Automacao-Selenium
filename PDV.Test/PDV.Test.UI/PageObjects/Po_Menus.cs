@@ -82,7 +82,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects.Menus
         {
             PontoDeVenda();            
             Wait.LocateElementAndClick(By.XPath("//div[3]/thf-menu-item/div/div[2]/div[1]/thf-menu-item/a/div/div"));//PDV
-            Thread.Sleep(500);
+            Thread.Sleep(2000);
             ValidarTituloLista("PONTOS DE VENDA");
         } 
         public void Mesas(string NomePDV)

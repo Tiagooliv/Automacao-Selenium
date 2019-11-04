@@ -33,7 +33,7 @@ namespace POS.Interactions
             //    Thread.Sleep(8000);
             //}
 
-            Thread.Sleep(10000);
+            Thread.Sleep(12000);
             SendKeys.SendWait("[{Enter}");
         }
     }
