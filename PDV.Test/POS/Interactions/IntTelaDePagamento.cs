@@ -34,7 +34,8 @@ namespace POS.Interactions
             //}
 
             Thread.Sleep(12000);
-            SendKeys.SendWait("[{Enter}");
+            SendKeys.SendWait("{Esc}");
+            //SendKeys.SendWait("{Enter}");
         }
     }
 }

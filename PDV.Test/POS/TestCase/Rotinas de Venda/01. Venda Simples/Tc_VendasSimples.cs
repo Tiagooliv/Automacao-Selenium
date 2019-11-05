@@ -58,8 +58,45 @@ namespace POS.TestCase.Rotinas_de_Venda._01._Venda_Simples
             //}
         }
 
+        [Test]
+        public void CN002_Venda_2UN_Item()
+        {
+            HP.PosTST();
+            Login.LoginPOS();
+            IntCommon.PesqEmpPDV("R");            
+            TP.Pesquisar("Mesa 1");
+            TP.AbrirMesa();
+            TL.PesquisarProd("Água mineral", " 4,50");
+            TL.LancarProd_2UN();
+            TL.ValidarSubtotal("R$ 9,00");
+            TL.EnviarPedido();
+            TL.BtnPagamento();
+            PG.Dinheiro();
+            PG.Confirmar();
+            Msg.ValidarMsg("Conta paga com sucesso");            
+        }
 
-
+        [Test]
+        public void CN003_Venda_3_Itens_Diferentes()
+        {
+            HP.PosTST();
+            Login.LoginPOS();
+            IntCommon.PesqEmpPDV("R");
+            TP.Pesquisar("Mesa 1");
+            TP.AbrirMesa();
+            TL.PesquisarProd("Água mineral", " 4,50");
+            TL.LancarProd_1UN();
+            TL.PesquisarProd("Coca Cola", " 3,50");
+            TL.LancarProd_1UN();
+            TL.PesquisarProd("Espaguete", " 1,00");
+            TL.LancarProd_1UN();
+            TL.ValidarSubtotal("R$ 9,00");
+            TL.EnviarPedido();
+            TL.BtnPagamento();
+            PG.Dinheiro();
+            PG.Confirmar();
+            Msg.ValidarMsg("Conta paga com sucesso");
+        }
     }
 
 }

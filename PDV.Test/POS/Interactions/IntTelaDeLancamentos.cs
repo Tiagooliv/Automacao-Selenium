@@ -28,11 +28,22 @@ namespace POS.Interactions
             var precoprod = driver.FindElement(By.XPath(precoProd)).Text;
             Assert.AreEqual(PrecoProd, precoprod);
         }
+        public void LimparPesquisa()
+        {
+            Wait.LocateElementAndClick(By.XPath(limpaBusca));
+            Thread.Sleep(500);
+        }
 
         public void LancarProd_1UN()
-        {            
+        {
             Thread.Sleep(1000);
-            Wait.LocateElementAndClick(By.XPath(cliqueItem));    
+            Wait.LocateElementAndClick(By.XPath(cliqueItem));
+            LimparPesquisa();
+        }
+        public void LancarProd_2UN()
+        {
+            Thread.Sleep(1000);
+            Wait.LocateElementAndClick_x2(By.XPath(cliqueItem));
         }
 
         public void ValidarSubtotal(string Subtotal)
@@ -50,10 +61,7 @@ namespace POS.Interactions
         public void BtnPagamento()
         {
             Wait.LocateElementAndClick(By.XPath(btnPagamento));
-
-        }
-
-        
+        }        
 
 
 
