@@ -32,7 +32,7 @@ namespace POS.Interactions
         public void LancarProd()
         {            
             Thread.Sleep(1000);
-            Wait.LocateElementAndClick(By.XPath(CliqueItem));            
+            Wait.LocateElementAndClick(By.XPath(CliqueItem));    
         }
 
         public void ValidaSubtotal(string Subtotal)

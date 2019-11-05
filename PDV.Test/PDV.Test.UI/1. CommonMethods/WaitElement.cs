@@ -27,6 +27,25 @@ namespace PDV.Test.UI.POS.CommonMethods
             Element.Click();           
         }
 
-       
+        public void LocateElementAndClick_x2(By locator)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                var Element = Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(locator));
+                Element.Click();
+                Thread.Sleep(500);
+            }
+        }
+
+        public void LocateElementAndClick_x3(By locator)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                var Element = Wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(locator));
+                Element.Click();
+                Thread.Sleep(500);
+            }
+        }
+
     }
 }

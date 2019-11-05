@@ -51,6 +51,7 @@ namespace PDV.Test.UI._2._Interactions
         {
            
             driver.FindElement(By.XPath(PesqPDvEstab)).SendKeys(Text);
+            Thread.Sleep(500);
             Wait.LocateElementAndClick(By.ClassName(CliqPDvEstab));
             Thread.Sleep(1000);
         }

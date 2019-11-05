@@ -2,12 +2,7 @@
 using OpenQA.Selenium;
 using PDV.Test.UI._0._Login;
 using PDV.Test.UI.POS.CommonMethods;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace PDV.Test.UI._2._Interactions
 {
@@ -34,15 +29,13 @@ namespace PDV.Test.UI._2._Interactions
 
             //Wait.LocateElement(By.ClassName(tituloPg));
             //var title = driver.FindElement(By.ClassName(tituloPg)).Text;
-            //Assert.AreEqual("Estabelecimentos", title);
+            //Assert.AreEqual("Estabelecimentos", title);      
 
-            // Seleção de estabelecimento (Criar Classes separadas)
+        }
 
-            //driver.FindElement(By.XPath("//div/div[2]/input")).SendKeys("SQUAD PDV");
-            //Thread.Sleep(500);
-            //driver.FindElement(By.ClassName("initials-header")).Click();
-            //Thread.Sleep(2000);
-
+        public void Teardown()
+        {
+            driver.Quit();
         }
 
 

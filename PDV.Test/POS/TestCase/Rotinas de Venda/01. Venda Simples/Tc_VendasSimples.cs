@@ -35,7 +35,6 @@ namespace POS.TestCase.Rotinas_de_Venda._01._Venda_Simples
             Msg = new ValidarMsg(driver);
         } //Construtor
 
-
         [Test]
         public void CN001_Venda_1UN_Item()
         {
