@@ -16,7 +16,7 @@ namespace PDV.Test.UI.Interactions
         WaitElement Wait;
         ValidarSwitch Sw;
         Select_Element Select;
-        ValidarMsg Msg;
+        ValidaMsg Msg;
         IntCommon intCommon;
 
         public IntProduto(IWebDriver driver)
@@ -25,7 +25,7 @@ namespace PDV.Test.UI.Interactions
             Wait = new WaitElement(driver);
             Sw = new ValidarSwitch(driver);
             Select = new Select_Element(driver);
-            Msg = new ValidarMsg(driver);
+            Msg = new ValidaMsg(driver);
             intCommon = new IntCommon(driver);
 
         }
@@ -82,7 +82,7 @@ namespace PDV.Test.UI.Interactions
         public void BtnSalvar(string msg)
         {
             driver.FindElement(By.XPath(salvar)).Click();//Salvar
-            Msg.ValidaMsg(msg);
+            Msg.ValidarMsg(msg);
         }       
 
         public void Editar(string NomeProduto)
@@ -106,7 +106,7 @@ namespace PDV.Test.UI.Interactions
 
             driver.FindElement(By.XPath(confirmar)).Click();
 
-            Msg.ValidaMsg("Produto duplicado com sucesso.");
+            Msg.ValidarMsg("Produto duplicado com sucesso.");
 
             //driver.FindElement(By.XPath("//table/tbody[1]/tr/td[2]/div/span")).Clear();
         }
@@ -138,7 +138,7 @@ namespace PDV.Test.UI.Interactions
             intCommon.MenuExcluirList();
             Thread.Sleep(500);
             intCommon.ConfirmarExc();
-            Msg.ValidaMsg(msg);
+            Msg.ValidarMsg(msg);
             //driver.Navigate().Refresh();
         }
     }

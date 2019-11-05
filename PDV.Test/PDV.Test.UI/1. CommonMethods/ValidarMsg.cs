@@ -7,19 +7,19 @@ using PDV.Test.UI.POS.CommonMethods;
 namespace PDV.Test.UI._1._CommonMethods
 {
    
-    public class ValidarMsg
+    public class ValidaMsg
     {
         IWebDriver driver;
         WaitElement Wait;
         string msg = "/html/body/thf-toaster/div/div";
 
-        public ValidarMsg(IWebDriver driver)
+        public ValidaMsg(IWebDriver driver)
         {
             this.driver = driver;
             Wait = new WaitElement(driver);                  
         }
         
-        public void ValidaMsg(string Msg)
+        public void ValidarMsg(string Msg)
         {
             Wait.LocateElement(By.XPath(msg));
             var text = driver.FindElement(By.XPath(msg)).Text;

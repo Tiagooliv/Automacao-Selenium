@@ -15,7 +15,7 @@ namespace PDV.Test.UI.Interactions
         IWebDriver driver;
         WaitElement Wait;
         Select_Element Select;
-        ValidarMsg Msg;
+        ValidaMsg Msg;
         IntCommon intCommon;
         
 
@@ -24,7 +24,7 @@ namespace PDV.Test.UI.Interactions
             this.driver = driver;
             Wait = new WaitElement(driver);
             Select = new Select_Element(driver);
-            Msg = new ValidarMsg(driver);
+            Msg = new ValidaMsg(driver);
             intCommon = new IntCommon(driver);
         }
 
@@ -97,7 +97,7 @@ namespace PDV.Test.UI.Interactions
         public void BtnSalvar(string msg)
         {
             driver.FindElement(By.XPath(btnsalvar)).Click();
-            Msg.ValidaMsg(msg);
+            Msg.ValidarMsg(msg);
         }
 
         public void Editar() 
@@ -113,7 +113,7 @@ namespace PDV.Test.UI.Interactions
             intCommon.MenuExcluirList();
             Thread.Sleep(500);
             intCommon.ConfirmarExc();
-            Msg.ValidaMsg(msg);
+            Msg.ValidarMsg(msg);
 
         }
 

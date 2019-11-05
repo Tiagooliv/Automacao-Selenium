@@ -19,7 +19,7 @@ namespace POS.TestCase.Rotinas_de_Venda._01._Venda_Simples
         IntTelaPrincipal TP;
         IntTelaDeLancamentos TL;
         IntTelaDePagamento PG;
-        ValidarMsg Msg;
+        ValidaMsg Msg;
 
 
         public Tc_VendasSimples()
@@ -32,7 +32,7 @@ namespace POS.TestCase.Rotinas_de_Venda._01._Venda_Simples
             TP = new IntTelaPrincipal(driver);
             TL = new IntTelaDeLancamentos(driver);
             PG = new IntTelaDePagamento(driver);
-            Msg = new ValidarMsg(driver);
+            Msg = new ValidaMsg(driver);
         } //Construtor
 
         [Test]
@@ -47,13 +47,13 @@ namespace POS.TestCase.Rotinas_de_Venda._01._Venda_Simples
             TP.Pesquisar("Mesa 1");
             TP.AbrirMesa();
             TL.PesquisarProd("Água mineral", " 4,50");
-            TL.LancarProd();
-            TL.ValidaSubtotal("R$ 4,50");
+            TL.LancarProd_1UN();
+            TL.ValidarSubtotal("R$ 4,50");
             TL.EnviarPedido();
             TL.BtnPagamento();
             PG.Dinheiro();
             PG.Confirmar();
-            Msg.ValidaMsg("Conta paga com sucesso");
+            Msg.ValidarMsg("Conta paga com sucesso");
 
             //}
         }

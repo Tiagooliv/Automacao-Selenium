@@ -15,7 +15,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public IWebDriver driver;
         WaitElement Wait;
         Select_Element Select;
-        ValidarMsg Msg;
+        ValidaMsg Msg;
         IntCommon intCommon;
 
         public IntModificadores(IWebDriver driver)
@@ -23,7 +23,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             this.driver = driver;
             Wait = new WaitElement(driver);
             Select = new Select_Element(driver);
-            Msg = new ValidarMsg(driver);
+            Msg = new ValidaMsg(driver);
             intCommon = new IntCommon(driver);
         }
 
@@ -60,7 +60,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
         public void BtnSalvar(string msg)
         {
             driver.FindElement(By.XPath(btnSalvar)).Click();
-            Msg.ValidaMsg(msg);
+            Msg.ValidarMsg(msg);
         }
 
         public void Editar()
@@ -75,7 +75,7 @@ namespace PDV.Test.UI.ADMIN.PageObjects
             intCommon.MenuExcluirList();
             Thread.Sleep(500);
             intCommon.ConfirmarExc();
-            Msg.ValidaMsg(msg);
+            Msg.ValidarMsg(msg);
         }
 
         #region Antiga validação 

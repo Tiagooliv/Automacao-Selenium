@@ -29,13 +29,13 @@ namespace POS.Interactions
             Assert.AreEqual(PrecoProd, precoprod);
         }
 
-        public void LancarProd()
+        public void LancarProd_1UN()
         {            
             Thread.Sleep(1000);
-            Wait.LocateElementAndClick(By.XPath(CliqueItem));    
+            Wait.LocateElementAndClick(By.XPath(cliqueItem));    
         }
 
-        public void ValidaSubtotal(string Subtotal)
+        public void ValidarSubtotal(string Subtotal)
         {
             var sub = driver.FindElement(By.XPath(subtotal)).Text;
             Assert.AreEqual(Subtotal, sub);
