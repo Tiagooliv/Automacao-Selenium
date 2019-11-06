@@ -28,6 +28,7 @@ namespace POS.Interactions
             var precoprod = driver.FindElement(By.XPath(precoProd)).Text;
             Assert.AreEqual(PrecoProd, precoprod);
         }
+
         public void LimparPesquisa()
         {
             Wait.LocateElementAndClick(By.XPath(limpaBusca));
@@ -40,16 +41,49 @@ namespace POS.Interactions
             Wait.LocateElementAndClick(By.XPath(cliqueItem));
             LimparPesquisa();
         }
+
         public void LancarProd_2UN()
         {
             Thread.Sleep(1000);
             Wait.LocateElementAndClick_x2(By.XPath(cliqueItem));
         }
 
+        public void ValidarTotalProd(string ValorTotalProd)
+        {
+            var valortotprod = driver.FindElement(By.XPath(precoTotalProd)).Text;
+            if (valortotprod != ValorTotalProd)
+            {
+                Assert.Fail(" VALOR TOTAL ESPERADO DO PROD. :" + ValorTotalProd + " \n TOTAL CALCULADO:" + valortotprod);
+            }
+        }
+
         public void ValidarSubtotal(string Subtotal)
         {
             var sub = driver.FindElement(By.XPath(subtotal)).Text;
-            Assert.AreEqual(Subtotal, sub);
+            if (sub != Subtotal)
+            {
+                Assert.Fail(" SUBTOTAL ESPERADO: " + Subtotal + " \n SUBTOTAL CALCULADO: " + sub);
+            }            
+        }
+
+        public void ValidarTxServico(string TxServico)
+        {
+            var tx = driver.FindElement(By.XPath(txservico)).Text;
+            if (tx != TxServico)
+            {
+                Assert.Fail(" TAXA DE SERV. ESPERADA: " + TxServico + " \n TAXA CALCULADA: " + tx);
+            }
+
+        }
+
+        public void ValidarDesconto(string TotDesconto)
+        {
+            var desc = driver.FindElement(By.XPath(descontos)).Text;
+            if (desc != TotDesconto)
+            {
+                Assert.Fail(" DESCONTO ESPERADO: " + TotDesconto + " \n DESCONTO CALCULADO: " + desc);
+            }
+
         }
 
         public void EnviarPedido()

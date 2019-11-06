@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using PDV.Test.UI.POS.CommonMethods;
 using POS.PageObjects;
 using System.Threading;
@@ -20,6 +21,15 @@ namespace POS.Interactions
         {
             Wait.LocateElementAndClick(By.Id(FpDinheiro));
             //Wait.LocateElementAndClick(By.Id(FpDinheiro2));
+        }
+
+        public void ValidarTotaDalVenda(string ValorAserPago)
+        {
+            var totvenda = driver.FindElement(By.XPath(totalVenda)).Text;
+            if (totvenda != ValorAserPago)
+            {
+                Assert.Fail(" VALOR A SER PAGO ESPERADO: " + ValorAserPago + " \n VALOR CALCULADO: " + totvenda);
+            }
         }
 
         public void Confirmar()

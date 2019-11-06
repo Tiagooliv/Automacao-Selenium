@@ -41,21 +41,20 @@ namespace POS.TestCase.Rotinas_de_Venda._01._Venda_Simples
             HP.PosTST();
             Login.LoginPOS();
             IntCommon.PesqEmpPDV("R");
-
-            //for (int i = 0; i < 5; i++)
-            //{
             TP.Pesquisar("Mesa 1");
             TP.AbrirMesa();
             TL.PesquisarProd("Água mineral", " 4,50");
             TL.LancarProd_1UN();
+            TL.ValidarTotalProd(" 4,50");
             TL.ValidarSubtotal("R$ 4,50");
+            TL.ValidarTxServico("R$ 0,45"); //10% de taxa
             TL.EnviarPedido();
             TL.BtnPagamento();
             PG.Dinheiro();
+            PG.ValidarTotaDalVenda("R$ 4,95");
             PG.Confirmar();
             Msg.ValidarMsg("Conta paga com sucesso");
 
-            //}
         }
 
         [Test]
@@ -63,17 +62,20 @@ namespace POS.TestCase.Rotinas_de_Venda._01._Venda_Simples
         {
             HP.PosTST();
             Login.LoginPOS();
-            IntCommon.PesqEmpPDV("R");            
+            IntCommon.PesqEmpPDV("R");
             TP.Pesquisar("Mesa 1");
             TP.AbrirMesa();
             TL.PesquisarProd("Água mineral", " 4,50");
             TL.LancarProd_2UN();
+            TL.ValidarTotalProd(" 9,00");
             TL.ValidarSubtotal("R$ 9,00");
+            TL.ValidarTxServico("R$ 0,90"); //10% de taxa            
             TL.EnviarPedido();
             TL.BtnPagamento();
             PG.Dinheiro();
+            PG.ValidarTotaDalVenda("R$ 9,90");
             PG.Confirmar();
-            Msg.ValidarMsg("Conta paga com sucesso");            
+            Msg.ValidarMsg("Conta paga com sucesso");
         }
 
         [Test]
@@ -91,9 +93,11 @@ namespace POS.TestCase.Rotinas_de_Venda._01._Venda_Simples
             TL.PesquisarProd("Espaguete", " 1,00");
             TL.LancarProd_1UN();
             TL.ValidarSubtotal("R$ 9,00");
+            TL.ValidarTxServico("R$ 0,90"); //10% de taxa            
             TL.EnviarPedido();
             TL.BtnPagamento();
             PG.Dinheiro();
+            PG.ValidarTotaDalVenda("R$ 9,90");
             PG.Confirmar();
             Msg.ValidarMsg("Conta paga com sucesso");
         }
